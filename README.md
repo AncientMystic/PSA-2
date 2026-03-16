@@ -578,11 +578,11 @@ The Tor Browser is a modified version of Firefox ESR (Extended Support Release).
 <br>
 
 <details>
-    <summary><b>🛡️ Brave & Other Notable Mentions</b></summary>
+    <summary><b>🛡️ Other Notable Mentions</b></summary>
 
-While the above three represent the pinnacle of specific privacy philosophies, other browsers offer compelling features for different use cases.
+While the above browsers represent the pinnacle of specific privacy philosophies, other browsers offer compelling features for different use cases.
 
-### Brave: The All-Rounder
+### a bit more about Brave
 Brave is a Chromium-based browser that has built a strong reputation for putting privacy first by default. It blocks ads, trackers, and fingerprinting out of the box. It also offers unique features like a built-in Tor window for private tabs (though this only protects that tab, not the whole browser).
 - **Pros:** Excellent usability, fast, strong defaults, available on all platforms, built-in crypto wallet (if you use it) .
 - **Cons:** It is still based on the Chromium engine, which is largely controlled by Google. Its business model, which includes optional privacy-respecting ads and a crypto token, can be a point of distrust for some purists .
@@ -736,6 +736,132 @@ Many major VPN providers have adopted Electron to build their desktop applicatio
 *   **Windscribe**: A VPN with a generous free tier and a focus on ad and tracker blocking. Their desktop application is Electron-based, providing a straightforward interface for server selection and managing the built-in ad blocker, firewall, and proxy settings.
 
 </details>
+
+<details>
+  <summary><b>IceCat: my personal choice for browsers</b></summary>
+  GNU IceCat: The GNU Project's Free Software Browser
+
+GNU IceCat is a web browser developed by the GNU Project, based on Mozilla Firefox. Its primary mission is to provide a version of Firefox that is entirely free software, removing any components that are proprietary or recommend non-free plugins 1. It is part of the GNUzilla suite, which is the GNU project's effort to create a full range of Mozilla-based applications 1.
+
+What is GNU IceCat?
+
+Formerly known as IceWeasel, the browser was created to address restrictions Mozilla placed on the redistribution of modified Firefox binaries 1. Its goal is to offer a browsing experience identical to Firefox in function, but with a strict commitment to software freedom. This means no proprietary add-ons, plugins, or components are included or recommended by default 1.
+
+Key Features and Privacy Focus
+
+IceCat distinguishes itself through a combination of pre-applied privacy and security measures, making it a strong choice for users prioritizing freedom and protection against tracking 1.
+
+· LibreJS: This GNU plugin is included to automatically block non-free, non-trivial JavaScript. This prevents scripts that track users or perform other functions without the user's transparent consent 1.
+· Enhanced Privacy Protections: IceCat includes features to prevent browser fingerprinting by modifying APIs that sites use to uniquely identify a browser. It also blocks tracking cookies and provides notices for suspicious redirects 1.
+· Default Hardened Configuration: Unlike standard Firefox, where users must manually adjust settings for maximum privacy, IceCat ships with a configuration that has already been optimized for security and privacy out-of-the-box 1.
+· Completely Free Software: It removes any non-open source code, trademarks, or dependencies found in Firefox, ensuring that every line of code is free for users to study, modify, and share 1.
+
+Availability and Installation
+
+GNU IceCat is available for multiple operating systems, including GNU/Linux, Windows, macOS (10.14 onwards), and Android (via F-Droid) 1, 2. However, the project's commitment to freedom means it does not always provide official, pre-compiled binaries for every platform 1.
+
+· Recommended Installation (GNU/Linux): The preferred method is using the GNU Guix package manager by running guix install icecat 1.
+· Community Packages: For other distributions like Debian, Ubuntu, and Mint, community members have created resources. For example, a third-party repository and packaging script are available on GitHub to help users build and install IceCat on these systems 3.
+· Direct Downloads: The official website provides source tarballs, installers for Windows and macOS, and links to a Debian repository on Codeberg 2.
+
+History and Development
+
+The browser originated in 2005 as GNU IceWeasel. The name was changed to IceCat in 2007 to avoid confusion with Debian's independently modified Firefox version, which also used the IceWeasel name 1. It is maintained by the GNUzilla team and the free software community, with development driven by volunteers 1. IceCat typically bases its code on Firefox's Extended Support Release (ESR) versions to maintain a stable core while incorporating security patches 1.
+
+Criticisms and Considerations
+
+While GNU IceCat is highly regarded for its adherence to free software principles, there are practical trade-offs to consider.
+
+· Usability vs. Freedom: The strict blocking of non-free JavaScript via LibreJS can cause many modern websites to function incorrectly or break entirely. This aligns with the project's philosophy but can be frustrating for general users 1.
+· Update Cadence and Availability: Because it relies on volunteer effort and does not always provide official binaries, IceCat may not receive updates as quickly as mainstream browsers. This potential delay in security patches is a noted concern, and users on some platforms may need to rely on third-party packagers or compile it themselves 1, 3.
+· Niche Appeal: IceCat is designed for users who place absolute software freedom above all else. For those who simply want strong privacy without the ideological commitment to free JavaScript, a hardened version of standard Firefox (like using the Arkenfox user.js) might offer better site compatibility with similar privacy outcomes.
+
+In summary, GNU IceCat is a specialized tool that fulfills a specific mission: to offer a fully free, privacy-respecting browser based on Firefox. It is an excellent choice for free software advocates and users willing to accept potential site breakage for the sake of ideological purity and out-of-the-box privacy hardening.
+</details>
+**best mobile options:**
+  - **Android:**
+<details>
+<summary><b>🦎 Iceraven: The Customizable Firefox Fork for Android</b></summary>Iceraven Browser is a web browser for Android, based on Mozilla's Fenix version of Firefox (the current Firefox for Android codebase), GeckoView, and Mozilla Android Components 1. It is an independent, community-driven fork that aims to provide users with more options, greater customization, and access to a broader range of extensions than the official Firefox for Android 1.
+
+What it is:
+Iceraven is a close fork of Firefox for Android that seeks to combine the power of the modern Fenix codebase with the spirit of the older Fennec browser 1. It is an all-volunteer project with no affiliation to Mozilla, and it is not an official Mozilla product 1. Its primary goal is to offer users more control and customization, particularly through enhanced add-on support 6.
+
+Key features:
+
+· Expanded Add-on Support: Iceraven allows users to attempt to install a much wider range of add-ons than the official Firefox for Android 1. It queries a custom AMO (Add-ons for Mozilla) collection, giving access to many extensions that are not on Mozilla's recommended or curated lists for mobile 3. Note: The project warns that many of these add-ons will not work because they depend on code that Mozilla is still developing for the mobile Android Components 1.
+· about:config Support: Users have direct access to about:config, allowing them to tweak hundreds of advanced Firefox preferences and hidden settings for deep customization 1 6.
+· Enhanced Privacy Controls: Iceraven includes features like Enhanced Tracking Protection, HTTPS-Only Mode, and site permission controls inherited from Firefox 10. It also offers an option to not display recently visited websites on the homepage and an option to suspend tabs to prevent them from being killed for memory usage 1.
+· Customization Options: The browser provides extensive settings for tailoring the user experience, including home screen customization (top sites, recent tabs, bookmarks), tab behavior, and more 8.
+
+Installation:
+
+· Iceraven is not available on the Google Play Store. It can be downloaded directly from the Releases page on GitHub as an APK file 1. Users need to select the correct version for their device architecture (arm64-v8a for most modern devices, armeabi-v7a for older ones) 1.
+· It is also available on the F-Droid alternative app store 6.
+
+Privacy approach and data collection:
+The Iceraven project states that it does not collect or report any user information to the fork-maintainers 5. It actively works to remove or disable most telemetry and tracking features from upstream Firefox that would send data to Mozilla, Adjust, Leanplum, or Google 1 5. However, users should be aware of the following:
+
+· Potential Residual Data Flow: Due to the complexity of the codebase, the project cannot guarantee that no data is sent. If a user catches the app sending data to any third-party service, they are encouraged to open an issue 1.
+· Google Safe Browsing: This feature, which protects against malicious sites, is retained and on by default. It may collect some browsing data and is subject to Google's privacy policy 5.
+· Crash Reporter: Iceraven retains Mozilla's crash reporter. Users may choose to submit crash reports to Mozilla 5.
+· Firefox Sync: The optional Firefox Sync feature is available. Any data synced is subject to Mozilla's privacy policy 5.
+
+Criticisms and considerations:
+
+· Stability and Security Guarantees: The project explicitly states "No warranties or guarantees of security or updates or even stability!" 1. It includes unstable code from Mozilla with additional modifications, and binaries are signed with a debug key, not a proper release key 1 7. Users are cautioned against relying on it as a primary browser if they are not comfortable with "alpha" quality software and potential bugs 1 7.
+· Add-on Compatibility: The flagship feature of expanded add-on support comes with a major caveat: most of them will not work 1 7. This is due to ongoing development work in Mozilla's Android Components.
+· Community Feedback: Some users report that the browser can be "a touch buggy for some builds" 4. There have also been discussions and confusion around tracker detection apps flagging Iceraven, although this is often due to these apps being unable to distinguish between the browser's own connections and those of the websites it loads 2.
+· Alternative Recommendation: In the privacy community, Mull Browser (another Firefox fork) is sometimes recommended over Iceraven for users who prioritize privacy and stability, as it incorporates the Arkenfox user.js for hardening and has a clearer security stance 4.
+
+In summary, Iceraven is a browser for enthusiasts and advanced users who prioritize customization and access to a wide range of add-ons above all else. It is a powerful tool for those who want to experiment and tweak their browsing experience, but its alpha-level stability and lack of security guarantees make it less suitable for users whose primary concerns are privacy and reliability out-of-the-box 4 6.
+
+</details>
+  - **IOS:**
+<details>
+<summary><b>🌐 Orion Browser by Kagi: WebKit Speed with Cross-Platform Extension Support</b></summary>Orion is a native web browser developed by Kagi, designed for macOS, iOS, and iPadOS, with alpha versions for Linux and Windows in development. It aims to combine the speed and efficiency of Apple's WebKit engine with the flexibility of supporting extensions from Safari, Chrome, and Firefox, all while maintaining a strict zero-telemetry privacy policy 1.
+
+What it is:
+Orion positions itself as a browser that refuses to compromise on three core pillars: WebKit performance, full extension compatibility, and absolute privacy 1. It is built natively for Apple ecosystems but is expanding to other platforms. Unlike many mainstream browsers, Orion is 100% funded by its users through a subscription or one-time lifetime license (Orion Plus), with no ads, no third-party deals, and no data selling 1.
+
+Key features:
+
+· Cross-Platform Extension Support: Orion is touted as the only browser that supports extensions from Safari, Chrome, and Firefox's stores. The team has curated a list of 20 guaranteed-working extensions to ensure a smooth experience 1.
+· Zero-Compromise Privacy: The browser promises complete zero-telemetry browsing. It includes built-in ad-blocking and anti-tracking, uses the pure WebKit engine, and explicitly states there is no AI data collection or hidden surveillance 1.
+· Deep Customization: Users can configure far more than just themes, with options to tailor every detail of the browsing experience to their exact needs 1.
+· Kagi Services Integration: For users of Kagi's search engine and other services, Orion offers seamless, built-in integration for search, translation, and more, creating a cohesive "Kagiverse" experience 1.
+· Native Performance: The browser is built natively for each platform, promising fast speeds, low resource usage, and excellent battery life on Mac and iOS devices 1.
+
+Availability and versions:
+
+· macOS: The flagship version, refined over five years 1.
+· iOS and iPadOS: Trusted by over 4 million users, offering features not typically found in other mobile browsers 1.
+· Linux: An alpha version is currently available for users who value choice and independence 1.
+· Windows: An alpha version is in active development 1.
+
+Privacy approach and funding model:
+Orion's privacy stance is central to its identity. The website emphasizes "complete zero-telemetry browsing" and that the software is "made to work for the people funding it" 1. To sustain development without compromising user data, Orion operates on a user-funded model:
+
+· Orion Plus: This is a subscription or a one-time lifetime license that users can purchase to support ongoing development 1. The base browser is functional, but Plus features and the license directly fund the project.
+
+What people are saying:
+Reviews cited on the site highlight Orion's strengths:
+
+· ZDNet noted it's "fast, easy on the battery, and far more flexible than Safari," calling it what Safari would be if Apple "loosened the reins a bit" 1.
+· Mac Observer praised its "blazing speed while using a fraction of the resources" and its unique support for Chrome and Firefox extensions 1.
+· OMG! Ubuntu emphasized its clean model: "No data collection. No telemetry. No sponsored junk, partnerships or tie-ups. No incessant upsells" 1.
+
+Criticisms and considerations:
+
+· Extension Compatibility Limitations: While supporting extensions from multiple stores is a standout feature, the curated list of only 20 guaranteed-working extensions suggests that not all extensions will function correctly. Users with niche or complex add-ons may encounter issues 1.
+· WebKit Dependency: As a WebKit-based browser, Orion inherits both the performance benefits and the limitations of Apple's engine. It may not support certain web standards or features as quickly as Blink-based browsers 1.
+· Alpha Status on Linux/Windows: The versions for Linux and Windows are in alpha, meaning they are likely unstable, feature-incomplete, and not recommended for daily use by users who require reliability 1.
+· Paid Model for Full Features: While the browser itself is usable, some advanced features are locked behind the Orion Plus subscription or lifetime payment. Users seeking a completely free browser may find this limiting 1.
+· Smaller Ecosystem: Compared to giants like Chrome or Firefox, Orion's user base and extension ecosystem are smaller. Community support and third-party integrations will naturally be more limited 1.
+
+In summary, Orion is a compelling option for users deeply integrated into the Kagi ecosystem, those who want a privacy-respecting WebKit browser with multi-store extension support, and individuals willing to pay for software to avoid data monetization. Its alpha-stage status on non-Apple platforms and potential extension quirks mean it is best suited for enthusiasts and early adopters on those systems.
+
+</details>
+**Note:** Orion is also Available for MacOS with new Alpha stages for Linux and Windows. it allows you to specify custom blocklists for content blockers and has a wide range of addon support plus a privacy zero telemetry focus. 
 
 * * *
 
