@@ -1515,4 +1515,145 @@ This summarizes various security issues, cryptographic critiques, and significan
 
 </details>
 
+**other problematic messengers:**
+
+<details>
+<summary><b>Discord:</b></summary>
+
+# Comprehensive Analysis of Discord: Security, Privacy, and Surveillance Concerns
+
+This summarizes various security issues, third‑party vendor controversies, and platform‑specific vulnerabilities associated with the Discord messaging platform. It compiles information from technical research, security disclosures, and investigative reporting.
+
+## Table of Contents
+- [Technical Architecture & Electron Foundation](#technical-architecture--electron-foundation)
+- [Surveillance & Third-Party Vendor Controversies](#surveillance--third-party-vendor-controversies)
+- [Data Breaches & Security Incidents](#data-breaches--security-incidents)
+- [Anti-Forensics & Platform Vulnerabilities](#anti-forensics--platform-vulnerabilities)
+- [Governance & Privacy Policy Analysis](#governance--privacy-policy-analysis)
+- [Summary of Findings](#summary-of-findings)
+
+---
+
+## Technical Architecture & Electron Foundation
+
+| Issue | Details |
+| :--- | :--- |
+| **Outdated Electron Framework** | Discord's desktop application is built on [Electron](https://www.electronjs.org/), which packages a Chromium browser engine with Node.js. Community analysis indicates that Discord runs on Electron versions that may lag behind latest releases—for example, Discord was observed running on Electron 22.x after its support lifecycle ended. While Discord may manually backport specific security patches for critical vulnerabilities like the [WebP RCE exploit](https://chromereleases.googleblog.com/2023/09/stable-channel-update-for-desktop.html), this piecemeal approach can leave users exposed to unpatched Chromium vulnerabilities ([Sergey's Lemmy](https://lem.serkozh.me/post/74194/272413)). |
+| **Custom Electron Fork** | Discord uses a forked, custom version of Electron where they "cherry fixed" specific patches rather than updating the entire framework. This approach addresses performance issues but means version numbers alone don't indicate security posture ([GitHub Issue #18](https://github.com/avarayr/shamelectron/issues/18)). |
+| **Chrome Extension Injection Risk** | Because Electron embeds Chromium, Chrome extensions can technically be installed in Discord's desktop client. This creates a potential security risk—attackers could potentially develop malicious extensions designed to install on the desktop app, leading to account takeover and data theft scenarios ([Sergey's Lemmy](https://lem.serkozh.me/post/74194/272413)). |
+| **Tencent Shareholder Concerns** | Community discussions have noted that [Tencent](https://www.reuters.com/technology/tencent-leads-investment-discord-2021-03-30/), a Chinese multinational conglomerate, is a significant shareholder in Discord. Some users have raised speculative concerns about potential data access given Tencent's relationships with the Chinese government, though no public evidence confirms actual data sharing or government access arrangements ([Sergey's Lemmy](https://lem.serkozh.me/post/74194/272413)). |
+| **Architecture‑Induced Memory Issues** | Electron's multi‑process architecture spawns multiple renderer threads, each maintaining JavaScript heaps, DOM state, and cached media frames. This architecture contributes to the memory consumption patterns that enable certain anti-forensics attacks ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)). |
+
+---
+
+## Surveillance & Third-Party Vendor Controversies
+
+### The Persona Incident: Government‑Linked Surveillance Infrastructure
+
+The most significant public confirmation of surveillance concerns involves Discord's abandoned partnership with identity verification vendor **Persona**.
+
+| Issue | Details |
+| :--- | :--- |
+| **Exposed Government‑Authorized Infrastructure** | In February 2026, security researchers investigating Discord's age‑verification implementation discovered a publicly exposed Persona frontend on a **U.S. government‑authorized FedRAMP server**. The exposed server contained approximately 2,500 accessible files totaling 53 megabytes of data before being secured ([The Express Tribune](https://tribune.com.pk/story/2594479/discord-cuts-ties-with-persona-after-verification-code-found-tied-to-us-surveillance-efforts), [Fortune](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/)). |
+| **Extensive Verification Capabilities** | The exposed code revealed that Persona's software performed far more than simple age estimation. It executed **269 distinct verification checks** including ([The Express Tribune](https://tribune.com.pk/story/2594479/discord-cuts-ties-with-persona-after-verification-code-found-tied-to-us-surveillance-efforts), [Fortune](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/)): |
+| | • Facial recognition against **watchlists** and lists of "Politically Exposed Persons" |
+| | • Screening for "**adverse media**" across 14 categories including terrorism and espionage |
+| | • Assigning risk and similarity scores to individuals |
+| | • Age inconsistency checks and selfie analytics |
+| **Government Reporting Modules** | Analysis of the exposed codebase revealed modules for submitting [FinCEN](https://www.fincen.gov/) Suspicious Activity Reports (SARs) and Canadian [FINTRAC](https://fintrac-canafe.canada.ca/)可疑交易 reports—functionality far beyond typical age verification systems, suggesting a full Know Your Customer (KYC)/Anti-Money Laundering (AML) platform ([Nat Zone Analysis](https://www.sakimura.org/zh-CN/2026/02/7816/)). |
+| **Data Collection Scope** | Persona collected—and could retain for up to three years—extensive personal data including ([The Express Tribune](https://tribune.com.pk/story/2594479/discord-cuts-ties-with-persona-after-verification-code-found-tied-to-us-surveillance-efforts)): |
+| | • IP addresses and browser fingerprints |
+| | • Government ID numbers and phone numbers |
+| | • Biometric face data and device fingerprints |
+| | • Names and selfie analytics |
+| **Discord's Response** | Following public outcry, Discord announced it would **not continue using Persona** for age verification. The partnership lasted less than a month and involved limited testing in the UK, with Discord stating submitted information would be stored for up to seven days before deletion ([The Express Tribune](https://tribune.com.pk/story/2594479/discord-cuts-ties-with-persona-after-verification-code-found-tied-to-us-surveillance-efforts), [Fortune](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/)). |
+| **Broader Industry Usage** | Persona continues providing age verification services to other major platforms including ([The Express Tribune](https://tribune.com.pk/story/2594479/discord-cuts-ties-with-persona-after-verification-code-found-tied-to-us-surveillance-efforts), [Fortune](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/)): |
+| | • **Roblox**: Uses Persona's facial age estimation and ID verification |
+| | • **OpenAI/ChatGPT**: Described as "a trusted third‑party company" for age verification |
+| | • **Lime**: Deploys custom age verification flows with Persona |
+| **Government Connections** | The exposed files were found on a Federal Risk and Authorization Management Program (FedRAMP) server—certification required to sell services to the U.S. government. Persona CEO Rick Song confirmed the company was pursuing FedRAMP authorization but denied direct relationships with ICE or Palantir, stating: "We have no relationship whatsoever with ICE, Palantir" ([Fortune](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/)). |
+| **Researcher Observations** | The researchers noted: "We didn't even have to write or perform a single exploit, the entire architecture was just on the doorstep," adding that the endpoint "tags reports with codenames from active intelligence programs" ([The Express Tribune](https://tribune.com.pk/story/2594479/discord-cuts-ties-with-persona-after-verification-code-found-tied-to-us-surveillance-efforts), [Fortune](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/)). |
+
+---
+
+## Data Breaches & Security Incidents
+
+### Zendesk/5CA Breach: 70,000 Users' ID Photos Exposed
+
+| Issue | Details |
+| :--- | :--- |
+| **Incident Overview** | In October 2025, Discord disclosed a security incident involving unauthorized access to customer support data hosted through third‑party vendors. Attackers exploited legitimate third‑party access credentials to gain access to support tickets ([Security Affairs](https://securityaffairs.com/183143/cyber-crime/discord-denies-massive-breach-confirms-limited-exposure-of-70k-id-photos.html), [WION](https://www.wionews.com/world/discord-data-breach-government-ids-leak-1760008328768)). |
+| **Scope of Exposure** | Approximately **70,000 users** globally had their government‑ID photos potentially exposed. The stolen information included names, usernames, emails, contact details, billing information (partial credit card details), IP addresses, and message exchanges with customer support agents ([Security Affairs](https://securityaffairs.com/183143/cyber-crime/discord-denies-massive-breach-confirms-limited-exposure-of-70k-id-photos.html), [WION](https://www.wionews.com/world/discord-data-breach-government-ids-leak-1760008328768)). |
+| **Attackers' Claims** | Threat actors claimed to have stolen 1.6TB of data including 8.4 million support tickets, demanding $5 million (later reduced to $3.5 million). They allegedly used Zendesk integrations to run millions of API queries into Discord's internal systems to retrieve additional user data ([Security Affairs](https://securityaffairs.com/183143/cyber-crime/discord-denies-massive-breach-confirms-limited-exposure-of-70k-id-photos.html)). |
+| **Discord's Response** | Discord revoked the third‑party provider's access, launched an internal investigation with computer forensics experts, notified law enforcement, and contacted affected users. The company refused to pay the ransom and stated that its core production authentication systems were not breached ([Security Affairs](https://securityaffairs.com/183143/cyber-crime/discord-denies-massive-breach-confirms-limited-exposure-of-70k-id-photos.html), [WION](https://www.wionews.com/world/discord-data-breach-government-ids-leak-1760008328768)). |
+| **Vendor Disputes** | Discord identified 5CA as the compromised provider, though 5CA issued statements denying involvement with government ID handling, suggesting the incident may have been caused by "human error" outside their systems ([WION](https://www.wionews.com/world/discord-data-breach-government-ids-leak-1760008328768)). |
+| **Third‑Party Risk Highlight** | The incident underscored persistent cyber risks including vendor access abuse, identity governance failures, and sensitive data handling within support platforms. Support tickets often contain sensitive operational context and identity verification documents that can be weaponized for identity theft ([Security Affairs](https://securityaffairs.com/183143/cyber-crime/discord-denies-massive-breach-confirms-limited-exposure-of-70k-id-photos.html)). |
+
+---
+
+## Anti-Forensics & Platform Vulnerabilities
+
+### Memory‑Induced Auto‑Restart Anti‑Forensics (MIARA)
+
+A technical white paper documented an undocumented feature where Discord **silently restarts itself** when its process reaches approximately 4 GB of RAM usage, creating a powerful remote anti‑forensics attack vector ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)).
+
+| Issue | Details |
+| :--- | :--- |
+| **The Mechanism** | Discord monitors its own RAM consumption and performs a graceful restart when reaching the threshold, generating **no user notifications, system alerts, or forensic crash logs**. The restart clears all volatile state including message caches, renderer artifacts, decoded frames, and crash diagnostics ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)). |
+| **Remote Triggering** | An adversary in a shared server, channel, or direct message can remotely trigger this without code execution or user interaction by exploiting memory‑intensive content ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)): |
+| | • Large animated PNGs or high‑resolution WebP/AVIF files |
+| | • WebSocket message flooding with structured JSON |
+| | • Malformed media blocks triggering excessive decoding |
+| | • Recursive embed structures and massive emoji payloads |
+| **Victim Conditions** | The restart only occurs when the user is AFK (idle detection active) and not in active voice calls or streams—precisely when users are not monitoring their devices ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)). |
+| **Forensic Impact** | This behavior destroys all volatile evidence and leaves investigators with no crash reports, memory artifacts, or local cache traces. It effectively turns Discord into a "remote‑controlled evidence shredder" for malicious activity, enabling attackers to ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)): |
+| | • Deliver malicious payloads with ephemeral effects |
+| | • Force evidence erasure immediately after payload delivery |
+| | • Conduct operations with no persistent footprint |
+| **Defense Bypass** | Because this mechanism requires no exploit code, it bypasses most endpoint detection and response (EDR/XDR) monitoring which tracks executable creation and DLL injection but not "application purposely restarted due to memory pressure" ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)). |
+| **Adversarial Environmental Manipulation** | This vulnerability exemplifies a broader threat category: **Adversarial Environmental Manipulation (AEM)** , in which attackers weaponize defensive system behaviors—in this case, Discord's memory‑protection routine—as an anti‑forensics tool ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)). |
+
+---
+
+## Governance & Privacy Policy Analysis
+
+### Official Privacy Framework
+
+| Issue | Details |
+| :--- | :--- |
+| **Data Collection Scope** | According to Discord's official [Privacy Policy](https://discordapp.com:2087/privacy), the platform collects ([Discord Privacy Policy](https://discordapp.com:2087/privacy)): |
+| | • **Account information**: username, email, phone number, birthday, age verification documents |
+| | • **Content you create**: messages, posts, voice messages, uploaded files |
+| | • **Payment information**: billing details (processed by third‑party processors) |
+| | • **Automatically collected data**: IP addresses, operating system, browser information, device settings including microphone and camera status |
+| | • **Usage information**: friends added, servers joined, roles, purchases, game activity while Discord is running |
+| **Data Usage** | Discord states they use information to provide services, develop and improve features (including safety features that identify harmful content), and enforce terms and Community Guidelines. The company explicitly states they do **not** sell personal information to third parties, with business funded through subscriptions, paid products, and sponsored content ([Discord Privacy Policy](https://discordapp.com:2087/privacy)). |
+| **Content Moderation** | Discord may use content posted in larger spaces (servers accessible without invite links or with publicly shared invites) to develop, improve, and power services including safety features that identify harmful content. Users can limit this usage through privacy controls ([Discord Privacy Policy](https://discordapp.com:2087/privacy)). |
+| **Data Retention** | Discord's [Japanese data retention policy](https://support.discord.com/hc/ja/articles/5431812448791-Discord%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E6%83%85%E5%A0%B1%E3%82%92%E4%BF%9D%E6%8C%81%E3%81%99%E3%82%8B%E6%9C%9F%E9%96%93) specifies: |
+| | • Age verification IDs: Deleted within 60 days of ticket closure |
+| | • Database backups: Retained 30-45 days |
+| | • Trust and safety data: Retained up to 180 days after deletion (up to 2 years for policy violations) |
+| | • Legal compliance data: Retained up to 5 years for dispute purposes |
+| **Persona Incident Contradiction** | The Persona incident revealed that third‑party vendors may operate under different standards—Discord's UK FAQ (since deleted) indicated Persona stored information for up to seven days, contradicting earlier statements about immediate deletion ([Fortune](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/), [Nat Zone Analysis](https://www.sakimura.org/zh-CN/2026/02/7816/)). |
+
+---
+
+## Summary of Findings
+
+| Category | Specific Issue | Summary / Status |
+| :--- | :--- | :--- |
+| **Technical Architecture** | Outdated Electron Framework | Discord runs on custom Electron versions that may lag behind upstream; manual patching approach used ([Sergey's Lemmy](https://lem.serkozh.me/post/74194/272413)) |
+| **Technical Architecture** | Extension Injection Risk | Chrome extensions can be installed in Discord desktop, creating potential for malicious extension‑based attacks ([Sergey's Lemmy](https://lem.serkozh.me/post/74194/272413)) |
+| **Surveillance** | Persona Vendor Partnership | Discord contracted with identity verification vendor operating technology on U.S. government‑authorized FedRAMP infrastructure with extensive surveillance capabilities including facial recognition against watchlists and adverse media screening ([The Express Tribune](https://tribune.com.pk/story/2594479/discord-cuts-ties-with-persona-after-verification-code-found-tied-to-us-surveillance-efforts), [Fortune](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/)) |
+| **Surveillance** | Government Reporting Modules | Persona codebase included modules for FinCEN SAR and FINTRAC reporting—functionality far beyond age verification ([Nat Zone Analysis](https://www.sakimura.org/zh-CN/2026/02/7816/)) |
+| **Surveillance** | Data Retention by Vendors | Third‑party vendors operated under different standards than Discord's stated policies; UK FAQ indicated 7-day storage ([Fortune](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/)) |
+| **Security Incidents** | Zendesk/5CA Breach (2025) | Approximately 70,000 users had government ID photos exposed via compromised third‑party support vendor. Attackers accessed support tickets and identity verification documents ([Security Affairs](https://securityaffairs.com/183143/cyber-crime/discord-denies-massive-breach-confirms-limited-exposure-of-70k-id-photos.html), [WION](https://www.wionews.com/world/discord-data-breach-government-ids-leak-1760008328768)) |
+| **Anti‑Forensics** | MIARA Vulnerability | Discord's 4 GB memory threshold auto‑restart can be remotely triggered to silently wipe volatile evidence without user notification, enabling anti‑forensics attacks ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)) |
+| **Anti‑Forensics** | Evidence Destruction | The mechanism destroys RAM artifacts, renderer state, message caches, and crash logs, bypassing EDR/XDR monitoring ([Medium Whitepaper](https://medium.com/@this1isforyou/whitepaper-exploitation-of-discords-undocumented-auto-restart-memory-threshold-as-a-remote-ffe615d734c0)) |
+| **Governance** | Privacy Policy Commitments | Discord states they do not sell personal information, but third‑party vendors may operate under different standards ([Discord Privacy Policy](https://discordapp.com:2087/privacy)) |
+| **Governance** | Data Retention | Official policy: Age verification IDs deleted within 60 days; trust/safety data retained 180 days to 2 years ([Discord Japanese Policy](https://support.discord.com/hc/ja/articles/5431812448791-Discord%E3%81%8C%E3%81%82%E3%81%AA%E3%81%9F%E3%81%AE%E6%83%85%E5%A0%B1%E3%82%92%E4%BF%9D%E6%8C%81%E3%81%99%E3%82%8B%E6%9C%9F%E9%96%93)) |
+| **Governance** | Tencent Investment | Chinese conglomerate Tencent is a significant shareholder; speculative concerns about government access remain unconfirmed ([Sergey's Lemmy](https://lem.serkozh.me/post/74194/272413)) |
+
+</details>
+
 <hr>
