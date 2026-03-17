@@ -1,5 +1,8 @@
 # PSA-2
 
+<p align="center">
+  <img width="600" src="https://github.com/AncientMystic/PSA-2/blob/main/PSA-2-Banner.png"></p>
+
 <br> Privacy, Security, Anonymity.
 <br> Created for the [PSA-2](https://smp6.simplex.im/g#bckDsEYDqWxymN8NONKMNSVaMo61s78QZT7PL_4o6mE) on Simplex Chat [![Simplex Chat](https://avatars.githubusercontent.com/u/59927747?s=18&v=4)](https://simplex.chat/)
 
