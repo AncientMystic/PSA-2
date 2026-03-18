@@ -892,6 +892,30 @@ In summary, Orion is a compelling option for users deeply integrated into the Ka
 
 **Note:** Orion is also Available for MacOS with new Alpha stages in development for Linux and Windows. it allows you to specify custom blocklists for content blockers and has a wide range of addon support plus a privacy orientated zero telemetry focus. 
 
+### Additional notes: 
+
+<details>
+    <summary><b>📱 The Mobile Browser Battlefield</b></summary>
+
+Your mobile browser choices are even more critical than desktop ones, as mobile devices are more surveilled.
+
+- **The Google Play Services Dependency:** Most Android browsers, even privacy-focused ones, run on devices with Google Play Services—a proprietary background process with system-level privileges. As the [GrapheneOS](https://opsec.hackliberty.org/opsec/#wall-of-fame-as-of-january-2026) documentation explains, this creates a fundamental trust issue. Your browser may be private, but the OS beneath it is reporting to Google.
+- **Mullvad Browser's Mobile Implications:** The Mullvad Browser's approach—making all users look identical to resist fingerprinting—is even more powerful on mobile, where device characteristics are more standardized. However, as the [Mullvad Browser documentation](https://www.mullvad.net/en/download/browser/) notes, it requires a trusted VPN for IP anonymity, and on mobile, that VPN must be carefully chosen to avoid leaking data.
+- **The Iceraven Trade-off:** As noted in the [Iceraven documentation](https://forum.agoraroad.com/index.php?threads/dead-internet-theory-most-of-the-internet-is-fake.3011/), this Firefox fork offers expanded add-on support and `about:config` access on Android, but comes with explicit "no warranties or guarantees of security or updates." For high-risk users, this may be unacceptable; for enthusiasts, it's a powerful customization tool.
+
+</details>
+
+<details>
+    <summary><b>🔐 The Encryption Paradox: Why Your "Secure" Browser Isn't Enough</b></summary>
+
+- **The NSA's Bullrun Program:** The [Snowden documents](https://www.propublica.org/article/the-nsas-secret-campaign-to-crack-undermine-internet-encryption) revealed that the NSA spends $250 million annually on programs to "defeat the encryption used in specific network communication technologies." They've inserted backdoors into commercial encryption products, influenced international standards, and collaborated with tech companies to weaken security.
+- **The Five Eyes Encryption Pressure:** The Five Eyes intelligence alliance (US, UK, Canada, Australia, New Zealand) has repeatedly [called for encryption backdoors](https://web.archive.org/web/20230213212534/https://www.technocracy.news/five-eyes-biden-authorizes-access-to-everyones-social-media/), arguing they need access for national security. This is a sustained, multi-decade campaign to undermine the very technology your browser relies on.
+- **The Telegram Precedent:** The [FBI's attempts to bribe Telegram developers](https://www.neowin.net/news/fbi-asked-durov-and-developer-for-telegram-backdoor/) for backdoor access shows that even end-to-end encrypted services are under constant pressure. Your browser's security is only as good as the ecosystem it connects to.
+
+**Browser implication:** Even the most hardened browser (LibreWolf, Tor, Mullvad) connects to a network where the underlying encryption may be compromised. This doesn't mean you shouldn't use them—they're essential—but it means you must layer defenses. Use Tor for network anonymity, VPNs for IP masking, and treat all encrypted traffic as potentially observable by sufficiently motivated adversaries.
+
+</details>
+
 * * *
 
 ## 📱 Mobile Operating Systems
@@ -1150,7 +1174,42 @@ Nextcloud is fundamentally different. It is an **open-source, self-hosted** cont
 
 <br>
 
-* * *
+<hr> 
+
+### ⚠️ Platform-Specific Risk Assessments
+
+Not all platforms are created equal. Some have architectural features or business models that make them inherently dangerous for privacy-conscious users.
+
+<details>
+    <summary><b>📘 Facebook/Meta: The Case Study in Platform Risk</b></summary>
+
+Meta's platforms (Facebook, Instagram, WhatsApp) appear repeatedly in your documents as vectors for harm. This isn't coincidental; it's architectural.
+
+- **Design for Addiction, Not Safety:** Instagram's recommendation algorithms were found to [actively promote pedophile networks](https://www.theverge.com/2023/6/7/23752192/instagrams-recommendation-algorithms-promote-pedophile-networks-investigation). Following just a handful of accounts "was enough to flood a test account with content that sexualizes children." This isn't a bug; it's the engagement-maximizing algorithm working as designed, surfacing whatever content keeps users on the platform.
+- **Data Architecture Failures:** Facebook [stored up to 600 million user passwords in plain text](https://www.cnbc.com/2019/03/21/facebook-employees-had-access-to-millions-of-user-passwords.html), accessible to tens of thousands of employees. This wasn't a sophisticated hack; it was basic security hygiene failure at massive scale.
+- **Active Harm Facilitation:** The Human Trafficking Institute's [2020 report](https://arstechnica.com/tech-policy/2021/06/facebook-is-a-hub-of-sex-trafficking-recruitment-in-the-us-report-says/) found that 59% of online recruitment for sex trafficking occurred on Facebook, with 65% of child victims recruited through the platform. The Texas Supreme Court [ruled](https://web.archive.org/web/20240810163040/https://thecrimereport.org/2021/06/28/facebook-liable-for-human-trafficking-connections-court-ruling/) that Facebook can be held liable for this—a rare legal finding that the platform's design actively enables harm.
+- **"Fact-Checking" as Ideological Enforcement:** Facebook's admission that its "fact checks" are actually [opinion](https://web.archive.org/web/20240322123440/https://nypost.com/2021/12/14/facebook-admits-the-truth-fact-checks-are-really-just-lefty-opinion/) reveals that content moderation is fundamentally political, not scientific. When journalist John Stossel's climate videos were flagged as "false" based on "tone," not factual inaccuracy, the system's true purpose was exposed.
+
+</details>
+
+<details>
+    <summary><b>📹 YouTube/Google: The Surveillance-Advertising Nexus</b></summary>
+
+- **Digital ID Expansion:** Google is actively expanding [digital ID capabilities](https://web.archive.org/web/20250503134929/https://identityweek.net/google-expands-digital-id-capabilities-across-the-u-k-and-us-adds-new-privacy-features/) through Google Wallet, partnering with the UK government to certify digital IDs. They're integrating zero-knowledge proofs for age verification—a cryptographic technique that could be expanded to other attributes.
+- **Censorship as Feature:** YouTube CEO Susan Wojcicki explicitly [called on governments](https://web.archive.org/web/20240810192332/https://www.breitbart.com/tech/2022/02/16/google-speech-code-youtube-ceo-susan-wojcicki-calls-on-governments-to-censor-the-internet/) to pass laws defining "harmful" content so platforms could implement censorship "cleanly and clearly." This is a request for legal cover to remove content they already consider problematic.
+- **UN Partnership for Narrative Control:** The UN's partnership with Google to [elevate climate content](https://web.archive.org/web/20250211065616/https://www.breitbart.com/environment/2022/10/04/united-nations-partners-with-google-to-silence-climate-skeptics/) in search results shows how algorithmic curation is used to shape public discourse. When the UN official says they "own the science" and want to ensure the "right messages" get through, they're describing a censorship operation.
+
+</details>
+
+<details>
+    <summary><b>📱 Discord: The Verification Trap</b></summary>
+
+- **Third-Party Verification Risks:** Discord's brief use of [Persona for age verification](https://fortune.com/2026/02/24/discord-peter-thiel-backed-persona-identity-verification-breach/) exposed how identity verification systems can leak. Persona's code was found on a U.S. government server, performing 269 distinct verification checks including screening against watchlists for "terrorism and espionage."
+- **Data Retention Contradictions:** Discord claimed IDs were deleted immediately, but archived FAQ pages showed data was stored for up to seven days. This pattern—contradictory statements about data handling—is common across platforms.
+
+</details>
+
+<hr>
 
 ### 🧠 Operational Security (OpSec) & Threat Modeling
 
@@ -1234,6 +1293,32 @@ The principles above are just the beginning. For a deeper dive, the following re
 
 I hope this section provides practical guide. The key takeaway is that OpSec is a holistic practice, it requires constant vigilance, learning from the mistakes of others, and protecting your digital life as if your physical safety depends on it, because sometimes it does.
 
+<details>
+    <summary><b>📉 The Data Broker Economy: Your Digital Shadow</b></summary>
+
+The documents provide concrete evidence of how your data is bought, sold, and weaponized.
+
+- **The Scale of Data Collection:** The [IARPA anticipatory intelligence program](https://web.archive.org/web/20230320225926/https://www.technocracy.news/iarpa-developing-ai-to-help-predict-the-future/) aims to continuously collect "all data about everyone in real time"—every Facebook post, tweet, YouTube video, tollbooth tag, GPS download, and street camera video. This isn't future tech; it's current R&D.
+- **The Fusion Center Network:** As detailed in the [Contact Tracing article](https://web.archive.org/web/20230331033928/https://www.technocracy.news/contact-tracing-big-tech-help-police-identify-protestors/), state and local "fusion centers" across the US monitor social media, license plate readers, and surveillance cameras in real-time. They use tools like Clearview AI (facial recognition), BriefCam (video analytics), and Ring doorbell partnerships to create comprehensive movement profiles.
+- **The Public-Private Surveillance Partnership:** The [lawsuit documents](https://web.archive.org/web/20230325025222/https://www.technocracy.news/lawsuit-uncovers-sprawling-network-of-federal-social-media-collusion-to-censor-americans-during-pandemic/) reveal that at least 11 federal agencies coordinated with social media platforms to suppress speech. This wasn't ad-hoc; it was systematic collaboration with message templates and pressure campaigns.
+
+**OpSec implication:** Your threat model must account for the fact that data brokers are aggregating information from thousands of sources. Even if you're careful on one platform, you may be exposed through another. This reinforces the need for strict identity separation and compartmentalization.
+
+</details>
+
+<details>
+    <summary><b>⚖️ The Legal Architecture of Surveillance</b></summary>
+
+Understanding the legal framework enables you to anticipate where surveillance is heading.
+
+- **The Smith-Mundt Modernization Act (2012):** As noted in the [Dead Internet Theory timeline](https://forum.agoraroad.com/index.php?threads/dead-internet-theory-most-of-the-internet-is-fake.3011/), this act gave the U.S. government full legal authority to use propaganda against its own populace, reversing rules put in place after the Church Committee exposed CIA domestic propaganda operations.
+- **The UK Online Safety Act:** The [Ofcom guidance](https://identityweek.net/ofcom-issues-guidance-on-how-age-checks-can-be-highly-robust-to-protect-children/) mandates "highly effective age assurance" for all websites, with enforcement beginning in 2025. This legally compels platforms to implement the very surveillance infrastructure critics warn about—photo ID matching, facial age estimation, digital identity services—all under the banner of child protection.
+- **The Texas Supreme Court Ruling on Section 230:** The [Texas ruling](https://web.archive.org/web/20240810163040/https://thecrimereport.org/2021/06/28/facebook-liable-for-human-trafficking-connections-court-ruling/) against Facebook's Section 230 immunity for human trafficking connections creates a precedent that platforms can be held liable for how their systems are used. While this seems pro-accountability, it also incentivizes platforms to surveil and moderate more aggressively to avoid liability.
+
+**OpSec implication:** These laws create legal requirements for surveillance that didn't exist before. Your OpSec must account for the fact that platforms are now legally obligated to collect more data, verify identities more thoroughly, and report more activities to authorities.
+
+</details>
+
 * * *
 
 ### 🌍 The Shifting Landscape: Systemic Threats to a Free Internet
@@ -1260,7 +1345,72 @@ The tools and habits discussed in this guide exist within a rapidly changing glo
 
 **Implication:** The individual is now navigating a digitally hostile environment. The platforms are weaponized, the content is often synthetic, and the infrastructure is being re-engineered for control. Your OpSec is no longer just about protecting your passwords; it's about navigating a fundamentally manipulated information space.
 
+<details>
+    <summary><b>📡 The Architecture of Censorship: How It's Actually Implemented</b></summary>
+
+Understanding *how* censorship is technically implemented helps you choose effective countermeasures.
+
+- **Network-Level Interference:** The University of Michigan's [Censored Planet](https://news.umich.edu/extremely-aggressive-internet-censorship-spreads-in-the-worlds-democracies/) project collected over 21 billion measurements across 221 countries, revealing that censorship is increasing even in democracies like Norway, Japan, and Poland. The technical methods include:
+    - **DNS poisoning and TCP/IP reset attacks** that interrupt connections to specific sites
+    - **SNI (Server Name Indication) inspection** to block based on the domain name within encrypted connections
+    - **BGP hijacking** to reroute traffic through inspection points
+- **The "Great Firewall" Model Spreads:** Countries are adopting China's multi-layered filtering approach. As the [internet censorship statistics](https://brandongaille.com/32-amazing-internet-censorship-statistics/) show, China employs 30,000 internet police and blocks over 1 in 4 websites through a four-level filtering process. This technical architecture is now being exported through initiatives like China's [Belt and Road digital infrastructure projects](https://www.bbc.co.uk/future/article/20190514-the-global-internet-is-disintegrating-what-comes-next), offering a "plug-and-play authoritarian internet" to other nations.
+- **VPN Blocking as a Technical Arms Race:** Turkmenistan's escalating campaign against VPNs, documented by [CIVICUS](https://monitor.civicus.org/explore/new-cases-internet-censorship-arbitrary-travel-bans-and-mass-mobilisation-regime-praising-ev/), shows how states are moving beyond simple site blocking to actively identify and block circumvention tools. They're creating dedicated "internet security" services specifically to defeat VPN protocols.
+
+**What this means for your tool selection:** Your choice of VPN and circumvention tools must account for the specific censorship architecture in your threat model. For high-risk environments, tools like Tor with pluggable transports (which obfuscate traffic to look like ordinary HTTPS) may be necessary, not just a standard VPN.
+
+</details>
+
+<details>
+    <summary><b>🏦 Financial Infrastructure as a Control Layer</b></summary>
+
+The documents reveal that financial technology is becoming a primary vector for surveillance and control.
+
+- **Know Your Customer (KYC) Expansion to Cloud Services:** The U.S. Department of Commerce's proposed [KYC regulation for Infrastructure as a Service (IaaS)](https://web.archive.org/web/20240423053035/https://www.alilybit.com/p/un-and-us-government-expands-censorship) would require cloud providers to verify the identity of foreign customers developing AI models. This extends financial surveillance logic to the entire tech stack. Failure to comply carries penalties up to $1 million and 20 years imprisonment.
+- **Programmable Money and Digital ID Convergence:** The UK's proposed "super-app," described by UK Finance chairman Bob Wigley, will combine [digital ID with financial data](https://web.archive.org/web/20230529023218/https://surveillance.news/2023-02-23-uk-introduce-digital-id-financial-data-control-tool.html)—credit scores, KYC data, and transaction history—into a single tool. This is the technical infrastructure for programmable money, where your spending can be restricted based on your "score" or compliance.
+- **Deplatforming Through Financial Chains:** The Global Alliance for Responsible Media (GARM) case, detailed in [The Gold Report](https://web.archive.org/web/20240809185331/https://www.thegoldreport.com/news/us-government-awards-billions-in-contracts-to-censorship-cartel), demonstrates how advertising boycotts can destroy a platform's revenue (they reduced X/Twitter's ad revenue by 80%). This is censorship enforced through financial choke points, not technical blocks.
+
+**Practical implication:** Consider using privacy-respecting payment methods (cash, prepaid cards, cryptocurrency like Monero) when possible. Be aware that linking your financial identity to your digital activities creates a permanent, auditable trail.
+
+</details>
+
+<details>
+    <summary><b>🌍 The Global Coordination of Digital Control</b></summary>
+
+The documents reveal that digital ID and surveillance systems aren't being adopted in isolation—they're being rolled out simultaneously across the world.
+
+- **Synchronized Global Rollout:** As [Expose News](https://web.archive.org/web/20251009191247/https://expose-news.com/2025/10/09/digital-id-rollout-everywhere-not-just-conspiracy/) documents, in just three months, Switzerland, the EU, Vietnam, Costa Rica, Papua New Guinea, the UK, Laos, Mexico, Ethiopia, and Zambia all advanced digital ID systems. This isn't coincidental national action; it's coordinated implementation of frameworks developed over years by organizations like the World Economic Forum.
+- **The WEF's Digital ID Blueprint:** The WEF published "[Identity in a Digital World](https://web.archive.org/web/20251009191247/https://www.weforum.org/publications/identity-in-a-digital-world-a-new-chapter-in-the-social-contract/)" (2018) and "[A Blueprint for Digital Identity](https://web.archive.org/web/20251009191247/https://www.bing.com/ck/a?&p=6e26c7aa6a9ac3861a4ffa960e79ea3b59a3a10213c809260fcc985143c86098JmltdHM9MTc1OTg4MTYwMA&ptn=3&ver=2&hsh=4&fclid=2f6c6216-4be0-6152-21f2-74034ad86050&psq=blueprint+for+digital+identity+wef&u=a1aHR0cHM6Ly93d3czLndlZm9ydW0ub3JnL2RvY3MvV0VGX0FfQmx1ZXByaW50X2Zvcl9EaWdpdGFsX0lkZW50aXR5LnBkZg)" (2016) years ago, sketching the governance models now being implemented. The technical work was done; national politics simply opened the door.
+- **The UN's Role:** UN Deputy Secretary-General Amina Mohammed's role on the [WEF's Young Global Leaders Board](https://web.archive.org/web/20230131162725/https://www.technocracy.news/un-agenda-women-kept-under-the-watchful-eye-of-the-ai-god/) illustrates the interlock between international organizations. The UN's Sustainable Development Goal 16.9 explicitly calls for "legal identity for all, including birth registration" by 2030—a global digital ID mandate framed as humanitarian aid.
+
+**Implication:** This isn't conspiracy theory; it's documented coordination. The systems being built are designed to be global and interoperable. Your local digital ID isn't just a national tool—it's a node in an emerging global identity infrastructure.
+
+</details>
+
 <hr>
+
+### 📝 The "Dead Internet Theory" as Technical Reality
+
+<details>
+    <summary><b>💀 The Dead Internet Theory: You're Talking to Machines</b></summary>
+
+The [Dead Internet Theory](https://forum.agoraroad.com/index.php?threads/dead-internet-theory-most-of-the-internet-is-fake.3011/) posits that most online content and interaction is now generated by AI, not humans. The documents provide evidence this is happening.
+
+- **AI Sentiment Analysis at Scale:** The U.S. Department of Homeland Security is funding [AI systems from Fivecast](https://web.archive.org/web/20230921131345/https://robots.news/2023-09-06-big-tech-government-ai-censor-social-media-posts.html) that "detect sentiment and emotion in social media posts" and automatically report "problematic" content to law enforcement. These systems don't just flag keywords; they analyze emotional tone. Using a frown emoji could get your account flagged.
+- **Bill Gates' Call for Real-Time AI Censorship:** Gates has explicitly [called for AI systems](https://web.archive.org/web/20240912000433/https://reclaimthenet.org/bill-gates-wants-ai-based-real-time-censorship-for-vaccine-misinformation) to encode "rules" and censor "misinformation" in real-time, arguing that if you catch it a day later, "the harm is done." This is preemptive censorship by algorithm.
+- **The Feedback Loop:** When you interact online, you may be training the systems that will eventually be used to surveil you. The [IARPA program](https://web.archive.org/web/20230320225926/https://www.technocracy.news/iarpa-developing-ai-to-help-predict-the-future/) aims to use "human forecasters" to train AI to predict geopolitical events. Your online behavior is data for these systems.
+
+**What this means for your OpSec:** Assume that in any public online space, you may be interacting with:
+- **Bots** designed to shape discourse
+- **AI monitoring systems** analyzing your sentiment and predicting your behavior
+- **Paid influencers** manufacturing consent
+
+Your genuine human interaction should move to private, encrypted, peer-to-peer channels. Your public online presence should be treated as performance, not conversation.
+
+</details>
+
+<hr>
+
 
 ### ~ F.A.Q. ~
 
@@ -1781,3 +1931,29 @@ A technical white paper documented an undocumented feature where Discord **silen
 </details>
 
 <hr>
+
+### 🔧 Practical Tools Addition
+
+<details>
+    <summary><b>🛡️ Additional Tools for Your Arsenal</b></summary>
+
+- **For Censorship Circumvention:**
+    - **Pluggable Transports** (obfs4, Snowflake) - Built into Tor Browser, these disguise your traffic to look like ordinary HTTPS, defeating Deep Packet Inspection
+    - **Shadowsocks** - An encrypted proxy protocol designed to evade sophisticated censorship systems
+    - **Lantern** - A peer-to-peer circumvention tool that routes traffic through trusted users
+
+- **For Metadata Removal:**
+    - **MAT2** - A metadata removal tool for multiple file types (as mentioned in [The Opsec Bible](https://opsec.hackliberty.org/opsec/How-to-remove-metadata-from-pictures,-videos-and-documents/))
+    - **ExifTool** - Powerful command-line tool for reading, writing, and editing metadata
+
+- **For Secure Communication:**
+    - **SimpleX Chat** - The platform your PSA-2 group uses; it has no user identifiers (not even random numbers), making it resistant to metadata analysis
+    - **Briar** - A peer-to-peer messaging app that works without a central server, using Tor and Bluetooth for offline messaging
+    - **Cwtch** - A decentralized, metadata-resistant messaging protocol built on Tor
+
+- **For Financial Privacy:**
+    - **Monero** - The only major cryptocurrency with strong privacy guarantees by default (transaction amounts, sender, and receiver are all hidden)
+    - **LocalMonero / AgoraDesk** - Peer-to-peer Monero exchanges that don't require KYC
+    - **Cash** - Still the most private payment method; use it when possible
+
+</details>
