@@ -1041,7 +1041,7 @@ The company characterized Ortis's statements as an unsubstantiated lie, made wit
 
 * * *
 
-## ☁️ 4) Encrypted Cloud Storage: Zero-Knowledge File Sync
+### ☁️ Encrypted Cloud Storage: Zero-Knowledge File Sync
 
 Popular cloud storage services like Google Drive, Dropbox, and OneDrive have full access to your files. They can scan them for content, hand them over to authorities, or be breached. Zero-knowledge (or end-to-end encrypted) storage ensures that only you can read your data.
 
@@ -1053,32 +1053,73 @@ There are two primary ways to achieve zero-knowledge cloud storage: using a prov
 ### Tresorit: The End-to-End Encrypted Cloud
 Tresorit is a Swiss-based cloud storage service that builds end-to-end encryption into its very fabric. The name "Tresorit" comes from "tresor" (vault), and its entire infrastructure is designed as a zero-knowledge platform.
 
-- **How it works:** Files are encrypted on your device before they are uploaded. The encryption keys are never sent to Tresorit's servers. This means Tresorit employees, hackers, or government agencies with a warrant cannot read your files. It has a "zero-knowledge" policy .
+- **How it works:** Files are encrypted on your device before they are uploaded. The encryption keys are never sent to Tresorit's servers. This means Tresorit employees, hackers, or government agencies with a warrant cannot read your files. It has a "zero-knowledge" policy.
 - **Key features:**
     - End-to-end encrypted file sync and sharing.
     - Granular permission management for shared folders ("tresors").
     - Secure link sharing with passwords and expiration dates.
     - Camera upload for automatic, encrypted photo backups.
-    - No tracking, no access to your contacts .
+    - No tracking, no access to your contacts.
 - **Trade-offs:** It's a paid service with limited free storage. You are trusting the company's implementation of security, though they have a strong reputation.
 
+### Sync.com: The Privacy-First Canadian Alternative
+Sync.com is another leading zero-knowledge cloud storage provider, based in Canada. Like Tresorit, it is designed with privacy as its core principle, ensuring that only you have access to your data.
+
+- **How it works:** All files are encrypted and decrypted locally on your device. Sync.com never has access to your encryption keys, making it impossible for them (or anyone who compromises their servers) to view your files. This is a true zero-knowledge architecture.
+- **Key features:**
+    - End-to-end encrypted file storage, sync, and sharing.
+    - Strict zero-knowledge policy, enforced by design.
+    - Advanced sharing controls, including password protection, expiration dates, and access permissions for shared links.
+    - Vault feature for secure backup of files from any device.
+    - Teams features for secure collaboration, including shared folders and team management.
+- **Trade-offs:** While it offers a generous free tier, advanced features and larger storage plans require a paid subscription. Its jurisdiction (Canada) is part of the Five Eyes intelligence alliance, which is a consideration for some threat models, though the zero-knowledge encryption mitigates this risk significantly.
+
+### Icedrive: The Modern, Feature-Rich Option
+Icedrive is a newer entrant in the zero-knowledge cloud storage space, known for its sleek, modern interface and competitive pricing. It uses the Twofish encryption algorithm, which is less common but highly respected.
+
+- **How it works:** Icedrive provides client-side encryption, meaning your data is encrypted before it leaves your device. They offer two modes: a standard, convenient mode for most users, and a "zero-knowledge" mode where the client handles all encryption, ensuring your password and keys are never known to Icedrive's servers.
+- **Key features:**
+    - Zero-knowledge, client-side encryption using the Twofish algorithm.
+    - Virtual drive functionality (similar to Cryptomator) that lets you access files without downloading them locally first, saving disk space.
+    - Clean, fast, and intuitive user interface across web, desktop, and mobile.
+    - Competitive pricing for both monthly and lifetime plans.
+    - Built-in file versioning and trash retention.
+- **Trade-offs:** It is a younger company with a shorter track record than Tresorit or Sync.com. Its zero-knowledge implementation requires careful attention during setup to ensure it is enabled correctly.
+
+### Nextcloud: The Self-Hosted Powerhouse
+Nextcloud is fundamentally different. It is an **open-source, self-hosted** content collaboration platform. Instead of paying a third party, you host the server software on hardware you control (at home, on a VPS, or with a provider). This gives you ultimate control but requires technical expertise.
+
+- **How it works:** You download and install Nextcloud on a private server. It provides a web-based interface and sync clients for all your devices. Because you control the server, no third party has access to your unencrypted files by default. For an extra layer of security, you can use server-side encryption or pair it with client-side tools like Cryptomator.
+- **Key features:**
+    - **Complete Control:** You own your data and server. There are no third-party privacy policies to trust. As Nextcloud's slogan states, it's about [regaining control over your data](https://nextcloud.com).
+    - **Full-Featured Platform:** It's far more than simple storage. Nextcloud Hub combines file sync with collaboration tools, including [group chat and web conferencing](https://nextcloud.com), [team calendaring and email](https://nextcloud.com), a [self-hosted online office suite](https://nextcloud.com), and even [AI integration](https://nextcloud.com) for content creation and assistance.
+    - **Scalability & Community:** It scales from a [Raspberry Pi to massive global deployments](https://nextcloud.com) and is backed by a huge, transparent open-source community.
+    - **Compliance & Security:** Designed with compliance in mind (GDPR, HIPAA), it offers extensive access control, encryption, and auditing capabilities.
+- **Trade-offs:** Requires technical knowledge to set up and maintain (server administration, updates, backups). While the software is free, you must pay for server hardware or hosting. The responsibility for security and backups rests entirely on you.
+
 ### Cryptomator: The Universal Client-Side Encryptor
-Cryptomator is a free, open-source tool that acts as a guardian for your files. It doesn't provide cloud storage itself; instead, it creates encrypted "vaults" on your device that you can then sync with **any** cloud provider (Dropbox, Google Drive, iCloud, OneDrive, etc.) .
+Cryptomator is a free, open-source tool that acts as a guardian for your files. It doesn't provide cloud storage itself; instead, it creates encrypted "vaults" on your device that you can then sync with **any** cloud provider (Dropbox, Google Drive, iCloud, OneDrive, etc.).
 
 - **How it works:** You create a vault, assign a password, and mount it like a virtual drive. Any file you put in the vault is automatically encrypted on your device before being synced to your chosen cloud folder. To access files, you unlock the vault, and Cryptomator decrypts them on the fly.
 - **Key features:**
     - **Open Source & Auditable:** Its code is publicly available for scrutiny on GitHub.
-    - **Platform Agnostic:** Works with any cloud service.
+    - **Platform Agnostic:** Works with any cloud service, including Sync.com, Icedrive, or even your own Nextcloud instance.
     - **Filename Encryption:** It can optionally encrypt filenames to hide directory structure.
-    - **Award-Winning:** Received the CeBIT Innovation Award for Usable Security and Privacy .
+    - **Award-Winning:** Received the CeBIT Innovation Award for Usable Security and Privacy.
 - **Trade-offs:** It requires you to manage your own cloud storage and the encryption process. While user-friendly, it adds an extra step to file management. You are still using the potentially privacy-invasive cloud provider's infrastructure, but they only see encrypted, unreadable data.
 
 **Which to choose?**
-- Choose **Tresorit** for a seamless, integrated, all-in-one secure cloud storage experience .
-- Choose **Cryptomator** for maximum flexibility, if you want to keep using your current cloud provider (e.g., free Google Drive storage) but want to secure your files .
+- Choose **Tresorit** for a seamless, integrated, all-in-one secure cloud storage experience with a long-standing reputation.
+- Choose **Sync.com** for a user-friendly, zero-knowledge service with a generous free tier and strong privacy credentials.
+- Choose **Icedrive** for a modern, feature-rich interface and competitive pricing, especially if you are interested in a lifetime plan.
+- Choose **Nextcloud** if you have the technical skills and desire ultimate control, want a full collaboration platform, and prefer open-source software.
+- Choose **Cryptomator** for maximum flexibility, to add a security layer to an existing (or free) cloud account, or to further protect data on a self-hosted solution.
 
 **Resources:**
 - **Tresorit:** [https://tresorit.com/](https://tresorit.com/)
+- **Sync.com:** [https://www.sync.com/](https://www.sync.com/)
+- **Icedrive:** [https://icedrive.net/](https://icedrive.net/)
+- **Nextcloud:** [https://nextcloud.com/](https://nextcloud.com/)
 - **Cryptomator:** [https://cryptomator.org/](https://cryptomator.org/)
 
 </details>
@@ -1087,7 +1128,7 @@ Cryptomator is a free, open-source tool that acts as a guardian for your files. 
 
 * * *
 
-## 🧠 5) Operational Security (OpSec) & Threat Modeling
+### 🧠 Operational Security (OpSec) & Threat Modeling
 
 Technology is only one part of the equation. Your habits, behaviors, and understanding of the risks are just as important. This section covers the often-overlooked human element of privacy.
 
@@ -1103,6 +1144,12 @@ Before you choose any tool, you must define your **threat model**. This is a str
 
 Your threat model determines your tools. A journalist facing a repressive regime has a radically different threat model (and thus, toolset) than a casual user wanting to stop ad tracking. **LibreWolf might be overkill for the casual user, while Tor Browser is essential for the journalist.** Always choose your tools based on your specific, realistic risks.
 
+**Refining Your Threat Model: Think Like an Adversary**
+To build a realistic threat model, you must move beyond abstract fears and consider the actual capabilities of your adversary.
+*   **Understand Your Attack Surface**: Your [attack surface](https://opsec.hackliberty.org/opsec/attack-surface/) is the sum of all the ways an adversary could potentially interact with you or your data. This includes your devices, online accounts, physical location, and even your social media posts. Auditing your attack surface is the first step in reducing it.
+*   **Learn from Real-World Mistakes**: History is filled with examples where poor OpSec led to downfall. Studying cases like the [LulzSec chief](https://opsec.hackliberty.org/opsec/Lulzsec-chief-downfall/), the [Bayrob malware gang](https://opsec.hackliberty.org/opsec/The-Bayrob-malware-gang-downfall/), or the [AlphaBay takedown](https://opsec.hackliberty.org/opsec/The-Downfall-of-AlphaBay/) reveals how simple errors—like reusing usernames or bragging online—can unravel anonymity. [LAPSUS$](https://opsec.hackliberty.org/opsec/LAPSUS$-OPSEC-Mistakes/) and [Pompompurin](https://opsec.hackliberty.org/opsec/The-Downfall-of-Pompompurin/) are more recent, stark reminders.
+*   **Beware of "Privacy Laxism"**: A major pitfall is [privacy laxism](https://opsec.hackliberty.org/opsec/Privacy-Laxism-is-real-and-it's-part-of-the-problem/)—the tendency to downplay risks or accept inadequate solutions for the sake of convenience. This mindset, often found in mainstream privacy communities, can lead you to believe that privacy is possible on inherently compromised systems like Windows or macOS, a claim that more rigorous resources [explicitly challenge](https://opsec.hackliberty.org/opsec/#wall-of-shame-as-of-june-2025).
+
 </details>
 
 <br>
@@ -1112,9 +1159,11 @@ Your threat model determines your tools. A journalist facing a repressive regime
 
 A key operational security practice is to compartmentalize your online identities. Don't use the same accounts, browsers, or even devices for different personas (e.g., your professional self, your personal self, and a "research" self).
 
-- **Separate Browsers/Profiles:** Use one browser (e.g., Brave) for your everyday, logged-in life (social media, banking). Use a completely different, hardened browser (e.g., LibreWolf or Mullvad Browser) for anonymous research and browsing where you are not logged in.
-- **Dedicated Email Addresses:** Use different, unlinked email addresses for different purposes. For example, use Proton Mail for sensitive communications, and a completely separate, alias-based email (e.g., from SimpleLogin or AnonAddy) for newsletter signups.
-- **Avoid Cross-Platform Linking:** Be mindful of how your accounts can be linked. Posting the same username on Reddit and Twitter, or using the same profile picture across platforms, can help data brokers and adversaries connect your identities.
+- **Separate Browsers/Profiles:** Use one browser (e.g., Brave) for your everyday, logged-in life (social media, banking). Use a completely different, hardened browser (e.g., LibreWolf or Mullvad Browser) for anonymous research and browsing where you are not logged in. For high-risk activities, consider using a dedicated [virtual machine](https://opsec.hackliberty.org/opsec/Black-Hat-Hacking-Sensitive-VMs-Tutorial/), like a Whonix workstation, to create a hardware-level separation.
+- **Dedicated Email Addresses:** Use different, unlinked email addresses for different purposes. For example, use Proton Mail for sensitive communications, and a completely separate, alias-based email (e.g., from SimpleLogin or AnonAddy) for newsletter signups. For maximum anonymity, explore methods to [get an email account without any personal identifiers](https://opsec.hackliberty.org/opsec/How-to-Get-an-Email-Account-Anonymously-[update-replacing-protonmail]/).
+- **Avoid Cross-Platform Linking:** Be mindful of how your accounts can be linked. Posting the same username on Reddit and Twitter, or using the same profile picture across platforms, can help data brokers and adversaries connect your identities. This is a classic OpSec failure; even sophisticated actors have been caught because they reused a [username, password, or email pattern](https://opsec.hackliberty.org/opsec/Identity-Segmentation-Fails:-Emails,-Usernames,-and-Passwords/).
+- **Segment Your Internet Usage:** A powerful method is to practice [Internet usage segmentation](https://opsec.hackliberty.org/opsec/Internet-Usage-Segmentation-Setup-[GrapheneOS-addition]/). This means creating distinct, isolated environments for different activities—for example, one for your real identity, one for a pseudonymous research identity, and one for high-anonymity work. This limits the damage if one identity is ever compromised.
+- **Transferring Between Identities**: If you need to move information or value between your separated identities, do so with extreme care. There are methods to [transfer activities across identities](https://opsec.hackliberty.org/opsec/How-to-transfer-Activities-across-Identities/) without creating a link, often involving the use of privacy-preserving technologies like Monero and intermediate, ephemeral identities.
 
 </details>
 
@@ -1134,9 +1183,34 @@ Manually opting out of every data broker site is a tedious but worthwhile task. 
 
 <br>
 
-* * *
+<details>
+    <summary><b>🏴‍☠️ Physical OpSec & Real-World Behavior</b></summary>
 
-<hr> 
+Digital privacy is meaningless if you are compromised in the physical world. Your online and offline lives are deeply connected, and adversaries will target the weakest link.
+
+- **The Danger of Metadata:** Files you share online contain hidden data. Photos, documents, and videos often include metadata like GPS coordinates, camera model, and creation time. Before sharing anything sensitive, learn how to [remove metadata from pictures, videos, and documents](https://opsec.hackliberty.org/opsec/How-to-remove-metadata-from-pictures,-videos-and-documents/). A single photo can reveal your location to a sophisticated adversary or a [stalker on a forum](https://opsec.hackliberty.org/opsec/4chan-uncovering-a-Syria-rebel-base-and-calling-in-a-Russian-airstrike/).
+- **Physical Surveillance & "Shoulder Surfing":** Be aware of your surroundings. [Shoulder surfing](https://opsec.hackliberty.org/opsec/The-Shoulder-Surfing-problem/)—someone looking over your shoulder at your screen or keyboard—is a simple but effective way to steal passwords or see sensitive information. Use privacy screens in public and be mindful of who is around you.
+- **Social Engineering & IRL Encounters:** Your biggest vulnerability is often yourself. Adversaries may try to [lure you into meeting someone in real life](https://opsec.hackliberty.org/opsec/Being-lured-into-meeting-someone-IRL/) or compromise you through friends, family, or colleagues. Be extremely cautious about translating online relationships into the physical world without rigorous verification and OpSec. The risks range from blackmail to [physical violence](https://opsec.hackliberty.org/opsec/Being-forced-into-violence-by-gangs/) or being [forced to become an informant](https://opsec.hackliberty.org/opsec/Being-forced-into-becoming-an-Informant/).
+- **Operational Security is Real-Life Chess**: Ultimately, good OpSec is about thinking several moves ahead. It’s a continuous process of anticipating how your actions today could be used against you tomorrow. As the saying goes, ["OPSEC is real-life chess."](https://opsec.hackliberty.org/opsec/OPSEC-is-real-life-chess/) You must always consider the adversary's potential response to your moves.
+
+</details>
+
+<br>
+
+### 📚 Further Reading & Foundational Resources
+
+The principles above are just the beginning. For a deeper dive, the following resources are considered foundational by many in the OpSec community:
+
+*   **[The Hitchhiker's Guide to Anonymity](https://opsec.hackliberty.org/opsec/#wall-of-fame-as-of-january-2026)**: A primary inspiration for modern OpSec guides, this is a comprehensive (though dense) resource covering a huge range of topics.
+*   **[Kicksecure Documentation](https://opsec.hackliberty.org/opsec/#wall-of-fame-as-of-january-2026)**: Explains how to achieve privacy, anonymity, and deniability at the operating system level.
+*   **[Whonix Documentation](https://opsec.hackliberty.org/opsec/#wall-of-fame-as-of-january-2026)**: The go-to resource for understanding and using Whonix, a desktop operating system designed for advanced security and anonymity.
+*   **[GrapheneOS](https://opsec.hackliberty.org/opsec/#wall-of-fame-as-of-january-2026)**: The gold standard for a hardened Android OS, removing Google services and adding significant security improvements.
+*   **[Sam Bent's YouTube Channel](https://opsec.hackliberty.org/opsec/#wall-of-fame-as-of-january-2026)**: Practical OpSec advice from a former darknet vendor, with a strong focus on legal realities.
+*   **[Beginner Privacy](https://opsec.hackliberty.org/opsec/#wall-of-fame-as-of-january-2026)**: A straightforward guide with practical steps and clear threat model advice, making it an excellent starting point.
+
+I hope this section provides practical guide. The key takeaway is that OpSec is a holistic practice, it requires constant vigilance, learning from the mistakes of others, and protecting your digital life as if your physical safety depends on it, because sometimes it does.
+
+* * *
 
 ### ~ F.A.Q. ~
 
