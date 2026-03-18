@@ -440,7 +440,7 @@ This section aims at providing clear comparisons, mitigation strategies, and lin
 
 * * *
 
-## 🌐 1) Web Browsers: Your Window to the World
+## 🌐 Web Browsers: Your Window to the World
 
 The browser is arguably the most important piece of software on any device. It's the primary interface to the internet and a massive attack surface for tracking, fingerprinting, and data collection. Moving away from mainstream, data-hungry browsers like Google Chrome and Microsoft Edge is a foundational privacy step.
 
@@ -868,7 +868,7 @@ In summary, Orion is a compelling option for users deeply integrated into the Ka
 
 * * *
 
-## 📱 2) Mobile Operating Systems
+## 📱 Mobile Operating Systems
 
 On mobile, the operating system is the ultimate arbiter of privacy. Stock Android (from Google) and iOS (from Apple) both have significant privacy trade-offs, primarily due to their integration with their parent companies' services. For those seeking true privacy and control, alternative Android-based operating systems are the only viable path.
 
@@ -935,7 +935,7 @@ CalyxOS is an AOSP-based operating system that removes Google services and repla
 
 * * *
 
-## 📧 3) Encrypted Email: Beyond the Consumer Giants
+## 📧 Encrypted Email: Beyond the Consumer Giants
 
 Email is a notoriously difficult protocol to secure. Its very nature involves sending messages to servers that may be outside your control. However, using a provider that implements end-to-end encryption (E2EE) and zero-access architecture is a massive step up from Gmail, Outlook, or Yahoo.
 
@@ -1045,10 +1045,7 @@ The company characterized Ortis's statements as an unsubstantiated lie, made wit
 
 Popular cloud storage services like Google Drive, Dropbox, and OneDrive have full access to your files. They can scan them for content, hand them over to authorities, or be breached. Zero-knowledge (or end-to-end encrypted) storage ensures that only you can read your data.
 
-<details>
-    <summary><b>🗄️ Tresorit and Cryptomator: A Two-Pronged Approach</b></summary>
-
-There are two primary ways to achieve zero-knowledge cloud storage: using a provider that builds it in by default (**Tresorit**), or using client-side encryption software to lock your files before uploading them to any cloud (**Cryptomator**).
+There are ways to achieve zero-knowledge cloud storage: using a provider that builds it in by default (**Tresorit**), or using client-side encryption software to lock your files before uploading them to any cloud (**Cryptomator**).
 
 ### Tresorit: The End-to-End Encrypted Cloud
 Tresorit is a Swiss-based cloud storage service that builds end-to-end encryption into its very fabric. The name "Tresorit" comes from "tresor" (vault), and its entire infrastructure is designed as a zero-knowledge platform.
@@ -1061,6 +1058,17 @@ Tresorit is a Swiss-based cloud storage service that builds end-to-end encryptio
     - Camera upload for automatic, encrypted photo backups.
     - No tracking, no access to your contacts.
 - **Trade-offs:** It's a paid service with limited free storage. You are trusting the company's implementation of security, though they have a strong reputation.
+
+### Cryptomator: The Universal Client-Side Encryptor
+Cryptomator is a free, open-source tool that acts as a guardian for your files. It doesn't provide cloud storage itself; instead, it creates encrypted "vaults" on your device that you can then sync with **any** cloud provider (Dropbox, Google Drive, iCloud, OneDrive, etc.).
+
+- **How it works:** You create a vault, assign a password, and mount it like a virtual drive. Any file you put in the vault is automatically encrypted on your device before being synced to your chosen cloud folder. To access files, you unlock the vault, and Cryptomator decrypts them on the fly.
+- **Key features:**
+    - **Open Source & Auditable:** Its code is publicly available for scrutiny on GitHub.
+    - **Platform Agnostic:** Works with any cloud service, including Sync.com, Icedrive, or even your own Nextcloud instance.
+    - **Filename Encryption:** It can optionally encrypt filenames to hide directory structure.
+    - **Award-Winning:** Received the CeBIT Innovation Award for Usable Security and Privacy.
+- **Trade-offs:** It requires you to manage your own cloud storage and the encryption process. While user-friendly, it adds an extra step to file management. You are still using the potentially privacy-invasive cloud provider's infrastructure, but they only see encrypted, unreadable data.
 
 ### Sync.com: The Privacy-First Canadian Alternative
 Sync.com is another leading zero-knowledge cloud storage provider, based in Canada. Like Tresorit, it is designed with privacy as its core principle, ensuring that only you have access to your data.
@@ -1097,23 +1105,13 @@ Nextcloud is fundamentally different. It is an **open-source, self-hosted** cont
     - **Compliance & Security:** Designed with compliance in mind (GDPR, HIPAA), it offers extensive access control, encryption, and auditing capabilities.
 - **Trade-offs:** Requires technical knowledge to set up and maintain (server administration, updates, backups). While the software is free, you must pay for server hardware or hosting. The responsibility for security and backups rests entirely on you.
 
-### Cryptomator: The Universal Client-Side Encryptor
-Cryptomator is a free, open-source tool that acts as a guardian for your files. It doesn't provide cloud storage itself; instead, it creates encrypted "vaults" on your device that you can then sync with **any** cloud provider (Dropbox, Google Drive, iCloud, OneDrive, etc.).
-
-- **How it works:** You create a vault, assign a password, and mount it like a virtual drive. Any file you put in the vault is automatically encrypted on your device before being synced to your chosen cloud folder. To access files, you unlock the vault, and Cryptomator decrypts them on the fly.
-- **Key features:**
-    - **Open Source & Auditable:** Its code is publicly available for scrutiny on GitHub.
-    - **Platform Agnostic:** Works with any cloud service, including Sync.com, Icedrive, or even your own Nextcloud instance.
-    - **Filename Encryption:** It can optionally encrypt filenames to hide directory structure.
-    - **Award-Winning:** Received the CeBIT Innovation Award for Usable Security and Privacy.
-- **Trade-offs:** It requires you to manage your own cloud storage and the encryption process. While user-friendly, it adds an extra step to file management. You are still using the potentially privacy-invasive cloud provider's infrastructure, but they only see encrypted, unreadable data.
-
 **Which to choose?**
 - Choose **Tresorit** for a seamless, integrated, all-in-one secure cloud storage experience with a long-standing reputation.
+- Choose Cryptomator for maximum flexibility, to add a security layer to an existing (or free) cloud account, or to further protect data on a self-hosted solution.
 - Choose **Sync.com** for a user-friendly, zero-knowledge service with a generous free tier and strong privacy credentials.
 - Choose **Icedrive** for a modern, feature-rich interface and competitive pricing, especially if you are interested in a lifetime plan.
 - Choose **Nextcloud** if you have the technical skills and desire ultimate control, want a full collaboration platform, and prefer open-source software.
-- Choose **Cryptomator** for maximum flexibility, to add a security layer to an existing (or free) cloud account, or to further protect data on a self-hosted solution.
+
 
 **Resources:**
 - **Tresorit:** [https://tresorit.com/](https://tresorit.com/)
