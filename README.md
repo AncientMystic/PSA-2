@@ -1097,7 +1097,8 @@ Popular cloud storage services like Google Drive, Dropbox, and OneDrive have ful
 
 There are ways to achieve zero-knowledge cloud storage: using a provider that builds it in by default (**Tresorit**), or using client-side encryption software to lock your files before uploading them to any cloud (**Cryptomator**).
 
-### Tresorit: The End-to-End Encrypted Cloud
+<details>
+    <summary><b>Tresorit: The End-to-End Encrypted Cloud</b></summary>
 Tresorit is a Swiss-based cloud storage service that builds end-to-end encryption into its very fabric. The name "Tresorit" comes from "tresor" (vault), and its entire infrastructure is designed as a zero-knowledge platform.
 
 - **How it works:** Files are encrypted on your device before they are uploaded. The encryption keys are never sent to Tresorit's servers. This means Tresorit employees, hackers, or government agencies with a warrant cannot read your files. It has a "zero-knowledge" policy.
@@ -1108,8 +1109,10 @@ Tresorit is a Swiss-based cloud storage service that builds end-to-end encryptio
     - Camera upload for automatic, encrypted photo backups.
     - No tracking, no access to your contacts.
 - **Trade-offs:** It's a paid service with limited free storage. You are trusting the company's implementation of security, though they have a strong reputation.
+</details>
 
-### Cryptomator: The Universal Client-Side Encryptor
+<details>
+    <summary><b>Cryptomator: The Universal Client-Side Encryptor</b></summary>
 Cryptomator is a free, open-source tool that acts as a guardian for your files. It doesn't provide cloud storage itself; instead, it creates encrypted "vaults" on your device that you can then sync with **any** cloud provider (Dropbox, Google Drive, iCloud, OneDrive, etc.).
 
 - **How it works:** You create a vault, assign a password, and mount it like a virtual drive. Any file you put in the vault is automatically encrypted on your device before being synced to your chosen cloud folder. To access files, you unlock the vault, and Cryptomator decrypts them on the fly.
@@ -1119,8 +1122,10 @@ Cryptomator is a free, open-source tool that acts as a guardian for your files. 
     - **Filename Encryption:** It can optionally encrypt filenames to hide directory structure.
     - **Award-Winning:** Received the CeBIT Innovation Award for Usable Security and Privacy.
 - **Trade-offs:** It requires you to manage your own cloud storage and the encryption process. While user-friendly, it adds an extra step to file management. You are still using the potentially privacy-invasive cloud provider's infrastructure, but they only see encrypted, unreadable data.
+</details>
 
-### Sync.com: The Privacy-First Canadian Alternative
+<details>
+    <summary><b>Sync.com: The Privacy-First Canadian Alternative</b></summary>
 Sync.com is another leading zero-knowledge cloud storage provider, based in Canada. Like Tresorit, it is designed with privacy as its core principle, ensuring that only you have access to your data.
 
 - **How it works:** All files are encrypted and decrypted locally on your device. Sync.com never has access to your encryption keys, making it impossible for them (or anyone who compromises their servers) to view your files. This is a true zero-knowledge architecture.
@@ -1131,8 +1136,10 @@ Sync.com is another leading zero-knowledge cloud storage provider, based in Cana
     - Vault feature for secure backup of files from any device.
     - Teams features for secure collaboration, including shared folders and team management.
 - **Trade-offs:** While it offers a generous free tier, advanced features and larger storage plans require a paid subscription. Its jurisdiction (Canada) is part of the Five Eyes intelligence alliance, which is a consideration for some threat models, though the zero-knowledge encryption mitigates this risk significantly.
+</details>
 
-### Icedrive: The Modern, Feature-Rich Option
+<details>
+    <summary><b>Icedrive: The Modern, Feature-Rich Option</b></summary>
 Icedrive is a newer entrant in the zero-knowledge cloud storage space, known for its sleek, modern interface and competitive pricing. It uses the Twofish encryption algorithm, which is less common but highly respected.
 
 - **How it works:** Icedrive provides client-side encryption, meaning your data is encrypted before it leaves your device. They offer two modes: a standard, convenient mode for most users, and a "zero-knowledge" mode where the client handles all encryption, ensuring your password and keys are never known to Icedrive's servers.
@@ -1143,8 +1150,10 @@ Icedrive is a newer entrant in the zero-knowledge cloud storage space, known for
     - Competitive pricing for both monthly and lifetime plans.
     - Built-in file versioning and trash retention.
 - **Trade-offs:** It is a younger company with a shorter track record than Tresorit or Sync.com. Its zero-knowledge implementation requires careful attention during setup to ensure it is enabled correctly.
+</details>
 
-### Nextcloud: The Self-Hosted Powerhouse
+<details>
+    <summary><b>Nextcloud: The Self-Hosted Powerhouse</b></summary>
 Nextcloud is fundamentally different. It is an **open-source, self-hosted** content collaboration platform. Instead of paying a third party, you host the server software on hardware you control (at home, on a VPS, or with a provider). This gives you ultimate control but requires technical expertise.
 
 - **How it works:** You download and install Nextcloud on a private server. It provides a web-based interface and sync clients for all your devices. Because you control the server, no third party has access to your unencrypted files by default. For an extra layer of security, you can use server-side encryption or pair it with client-side tools like Cryptomator.
@@ -1154,6 +1163,7 @@ Nextcloud is fundamentally different. It is an **open-source, self-hosted** cont
     - **Scalability & Community:** It scales from a [Raspberry Pi to massive global deployments](https://nextcloud.com) and is backed by a huge, transparent open-source community.
     - **Compliance & Security:** Designed with compliance in mind (GDPR, HIPAA), it offers extensive access control, encryption, and auditing capabilities.
 - **Trade-offs:** Requires technical knowledge to set up and maintain (server administration, updates, backups). While the software is free, you must pay for server hardware or hosting. The responsibility for security and backups rests entirely on you.
+</details>
 
 **Which to choose?**
 - Choose **Tresorit** for a seamless, integrated, all-in-one secure cloud storage experience with a long-standing reputation.
