@@ -138,56 +138,57 @@ The [BryanLunduke/DoesItAgeVerify GitHub repository](https://github.com/BryanLun
 
 ### 🛡️ The "No" Camp: Principles and Pragmatism
 A significant number of projects have drawn a firm line in the sand, refusing to implement age verification. This group includes:
-*   **Devuan Linux**, whose developers have made a clear statement against implementation.
-*   **Artix Linux**, with a developer statement refusing implementation.
-*   **FreeDOS**, whose founder has issued a developer statement opposing age verification.
-*   **Omarchy Linux**, with a developer statement confirming refusal.
-*   **DB48X** (calculator firmware), with a developer statement against implementation.
-*   **Arch Linux 32**, which has taken the pragmatic step of [forbidding its usage in Brazil and California](https://archlinux32.org/news/2026/brazil-california-usage-restriction), passing the legal risk to the user.
-*   A new project, **Ageless Linux**, has even been created as a [Debian fork specifically to protest these laws](https://github.com/ageless-linux/ageless).
+*   **Devuan Linux**, whose developers have made a clear [statement](https://x.com/lundukejournal/status/2034697759291310115) against implementation.
+*   **Artix Linux**, with a [developer statement](https://x.com/lundukejournal/status/2034776326901555488) refusing implementation.
+*   **FreeDOS**, whose founder has issued a [developer statement](https://x.com/lundukejournal/status/2034770975309361583) opposing age verification.
+*   **Omarchy Linux**, with a [developer statement](https://x.com/lundukejournal/status/2029580164498108846) confirming refusal.
+*   **DB48X** (calculator firmware), with a [developer statement](https://x.com/lundukejournal/status/2027358439991615715) against implementation.
+*   **Arch Linux 32**, which has taken the pragmatic step of [forbidding its usage in Brazil and California](https://x.com/lundukejournal/status/2033896030178029675), passing the legal risk to the user.
+*   A new project, [**Ageless Linux**](https://agelesslinux.org/), has even been created as a [Debian fork specifically to protest these laws](https://x.com/lundukejournal/status/2032951803134837237).
 
 ### 🏗️ The "Yes, But..." Camp: Compliance in Progress
 Other major distributions are planning to comply, even when their developers disagree with the mandates.
-*   **Ubuntu** is in the planning stages, with a [planning discussion](https://discourse.ubuntu.com/t/age-verification-implementation-plan/56789) and an [Ubuntu VP statement](https://discourse.ubuntu.com/t/age-verification-implementation-plan/56789) acknowledging the need to follow the law.
-*   **Pop!_OS** from System76 has stated it [opposes the laws but is planning to implement](https://blog.system76.com/posts/pop-os-age-verification-stance) the required features.
-*   **elementary OS's** founder has stated they will comply, with a [founder statement](https://blog.elementary.io/age-verification-compliance) confirming their intention.
-*   **Midnight BSD** has [temporarily forbidden usage in Brazil and California](https://www.midnightbsd.org/license-notice-brazil-california) until its implementation is finished, highlighting the legal pressure these projects are under.
+*   **Ubuntu** is in the planning stages, with a planning discussion [On the unfortunate need for an "age verification" API for legal compliance reasons in some U.S. states](https://lists.ubuntu.com/archives/ubuntu-devel/2026-March/043534.html) and an acknowledging the need to follow the law.
+*   **Pop!_OS** from System76 has stated it [opposes the laws but is planning to implement](https://www.generationamiga.com/2026/03/10/linux-vendor-system76-challenges-age-verification-laws-affecting-open-source/) the required features.
+*   **elementary OS's** founder has stated they will comply, with a [founder statement](https://mastodon.social/@danirabbit@mastodon.online/116250766314705297) confirming their intention.
+*   **Midnight BSD** has [temporarily forbidden usage in Brazil and California]https://x.com/midnightbsd/status/2030992394703732872) until its implementation is finished, highlighting the legal pressure these projects are under.
 
 ### 📱 The Expanding Battlefield: Beyond the Operating System
 A crucial expansion of this tracking is proposed in [Pull Request #5](https://github.com/BryanLunduke/DoesItAgeVerify/pull/5), which argues that if the OS is compromised, "there is no more web." This PR broadens the scope to include the entire software stack, showing how age verification is embedding itself at every layer.
 
 *   **System Components**:
-    *   **systemd**: A `birthDate` field has [already been merged](https://github.com/systemd/systemd/pull/12345) into the project, with attempts to revert it rejected. This is a foundational change affecting countless Linux systems.
-    *   **XDG Desktop Portal**: A [draft pull request](https://github.com/flatpak/xdg-desktop-portal/pull/456) for age verification exists, but its discussion was locked by maintainers, indicating deep controversy.
-    *   **archinstall**: A [pull request is open](https://github.com/archlinux/archinstall/pull/6789) for age verification and awaiting a stance from the Arch Linux organization.
-    *   **F-Droid**: [Ongoing discussions](https://forum.f-droid.org/t/age-verification-discussion/12345) are taking place, though it may be out of scope as a nonprofit. There is also a note about [Google developer identity verification](https://developers.google.com/identity) making age verification potentially redundant.
+    *   **systemd**: A `birthDate` field has [already been merged](https://github.com/systemd/systemd/pull/40954) into the project, with attempts to revert it rejected. This is a foundational change affecting countless Linux systems.
+    *   **XDG Desktop Portal**: A [draft pull request](https://github.com/flatpak/xdg-desktop-portal/pull/1922) for age verification exists, but its discussion was locked by maintainers, indicating deep controversy.
+    *   **archinstall**: A [pull request is open](https://github.com/archlinux/archinstall/pull/4290) for age verification and awaiting a stance from the Arch Linux organization.
+    *   **F-Droid**: Ongoing discussions are taking place, though it may be out of scope as a nonprofit.
 
 *   **Mobile Operating Systems (Already Live)**:
-    *   **Android**: The "Play Age Signals API" is [live in Brazil](https://developer.android.com/games/play/age-signals).
-    *   **iOS**: The "Declared Age Range API" is [live in Brazil, Australia, Singapore, Utah, and Louisiana](https://developer.apple.com/documentation/storekit/declared_age_range). This confirms the earlier Fedora discussion about OS-level APIs becoming a reality, and aligns with reporting on [Apple's iOS beta screens](https://reclaimthenet.org/apple-ios-uk-age-verification-online-safety-act-screen).
+    *   **Android**: The "Play Age Signals API" is [Play Age Signals API](https://developer.android.com/google/play/age-signals/overview).
+    *   **iOS**: The "Declared Age Range API" is [Declared Age Range API](https://developer.apple.com/documentation/declaredagerange/). This confirms the earlier Fedora discussion about OS-level APIs becoming a reality, and aligns with reporting on [Apple's iOS beta screens](https://reclaimthenet.org/apple-ios-uk-age-verification-online-safety-act-screen).
 
 *   **Browsers**:
-    *   **Brave** has published a [skeptical ZKP analysis](https://brave.com/zkp-age-verification-analysis) but has not implemented any age verification.
+    *   **Brave** has published a [skeptical ZKP analysis](https://brave.com/blog/zkp-age-verification-limits/) but has not implemented any age verification.
     *   **Firefox** has made no public statement regarding these specific laws.
     *   **Chromium/Chrome** has no formal statement on the specific laws, leaving a massive question mark over the future of web browsing on open source systems.
 
 *   **Video Platforms (Both Already Live)**:
-    *   **YouTube** is using [AI age estimation and Yoti facial scans](https://www.yoti.com/case-studies/youtube-age-assurance), live in the UK, EU, and Australia, and rolling out in the US. This aligns with Ofcom's guidance on ["highly effective" age assurance methods](https://identityweek.net/ofcom-issues-guidance-on-how-age-checks-can-be-highly-robust-to-protect-children/).
-    *   **TikTok** uses [signal-based detection and Yoti](https://www.yoti.com/case-studies/tiktok-age-assurance), live globally and complying with Brazil under ANPD order.
+    *   **YouTube** is using AI age estimation + Yoti facial scan, live in the UK, EU, and Australia, and rolling out in the US. This aligns with Ofcom's guidance on ["highly effective" age assurance methods](https://identityweek.net/ofcom-issues-guidance-on-how-age-checks-can-be-highly-robust-to-protect-children/).
+    *   **TikTok** uses signal-based detection + Yoti, live globally and complying with Brazil under ANPD order.
 
 *   **Messaging Apps**:
-    *   **Telegram** has an [official age verification bot live in the UK](https://telegram.org/blog/age-verification-bot).
-    *   **WhatsApp**'s "AgeKey Phase 1" is [rolling out](https://blog.whatsapp.com/agekey-phase-1-rolling-out).
-    *   **Discord** has delayed its rollout to H2 2026, notably after suffering a **[data breach of age verification ID data in October 2025](https://reclaimthenet.org/discord-support-breach-exposes-over-70000-government-ids)**—a stark real-world example of the security risks highlighted earlier.
-    *   **Matrix** is [evaluating privacy-preserving compliance options](https://matrix.org/blog/2026/01/age-verification-privacy-preserving), with no decision yet.
+    *   **Telegram** has an [official age verification bot live in the UK](https://core.telegram.org/api/age-verification).
+    *   **WhatsApp**'s "AgeKey Phase 1" is [rolling out](https://about.fb.com/news/video/age-verification/).
+    *   **Discord** has delayed its rollout to H2 2026, notably after suffering a **[data breach of age verification ID data in October 2025](https://reclaimthenet.org/discord-support-breach-exposes-over-70000-government-ids) ( [statement from discord](https://discord.com/press-releases/update-on-security-incident-involving-third-party-customer-service) )**—a stark real-world example of the security risks highlighted earlier.
+    *   **Matrix** is evaluating privacy-preserving compliance options, with no decision yet.
     *   **Signal** has [made no statement](https://signal.org/legal/#terms-of-service) beyond its 13+ Terms of Service.
 
 *   **Additional Distros with Ongoing Discussions**:
-    *   **NixOS**, **Fedora**, **Debian**, and **EndeavourOS** are all [discussing the issue with no decision yet](https://discourse.nixos.org/t/age-verification-laws-and-nixos/12345).
+    *   **NixOS**, **Fedora**, **Debian**, and **EndeavourOS** are all [discussing the issue with no decision yet](https://discourse.nixos.org/t/compliance-with-u-s-age-verification-laws/75791).
     *   **Fedora** discussions can be followed on [Fedora Discussion](https://discussion.fedoraproject.org/t/california-age-verification/181968).
-    *   **Debian** community discussions are happening on the [Debian mailing lists](https://lists.debian.org/debian-devel/2026/02/msg00123.html).
-    *   **Whonix/Kicksecure** is [investigating a privacy-preserving approach](https://forums.whonix.org/t/privacy-preserving-age-verification-approach/12345).
-    *   **Bazzite**: The Brazil block was [a mistake](https://github.com/ublue-os/bazzite/issues/789), with no official position currently.
+    *   **Debian** community discussions are happening on the [Debian mailing lists](https://forums.debian.net/viewtopic.php?t=165947).
+    *   **Whonix/Kicksecure** is [investigating a privacy-preserving approach](https://forums.whonix.org/t/whonix-adding-age-verification/22969).
+    *   **QubesOS**: [PrivacyGuides.net article](https://discuss.privacyguides.net/t/age-verification-for-qubes-os-and-whonix-among-other-linux-distributions/35984) - [Forum Discussion](https://forum.qubes-os.org/t/how-much-do-we-gotta-worry-about-this-linux-age-verification-bs/39788)
+    *   **Bazzite**: The Brazil block was a mistake, with no official position currently.
 
 ### 🧭 The Critical Juncture for Open Source
 This repository and its PR illuminate the core dilemma. As the PR author notes in [Pull Request #5](https://github.com/BryanLunduke/DoesItAgeVerify/pull/5), the industry push is for OS vendors to handle verification: *"Zuckerberg's entire push is to take the heat (and work required) off of apps and platforms and put them on the OS. If an app can't verify I am assuming they will just be locked."*
