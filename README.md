@@ -6,6 +6,10 @@
 <br> Privacy, Security, Anonymity.
 <br> Created for the [PSA-2](https://smp6.simplex.im/g#bckDsEYDqWxymN8NONKMNSVaMo61s78QZT7PL_4o6mE) on Simplex Chat [![Simplex Chat](https://avatars.githubusercontent.com/u/59927747?s=18&v=4)](https://simplex.chat/)
 
+<hr
+
+Help support more informative and helpful content with XMR/Monero: 45TftvPzdTNaye3AyftsHLd9p9mHqCLqNcTrbo8TmAMzYr4HmeebKZUMt5WNbmXjxe2p1L5kvQniVdvjuhewmQuKLN6Rmzd
+
 <hr> 
 
 ### The current largest threat to privacy and autonomy. 
@@ -124,6 +128,145 @@ the pieces are rapidly falling into place for a comprehensively controlled inter
 </details>
 
 this paints a picture of a world at a crossroads. The momentum behind digital ID and age verification is undeniable and globally coordinated. The choice before societies is whether to build systems that prioritize privacy, security, and user control (through methods like local APIs and zero-knowledge proofs) or to accept systems that centralize power, normalize biometric surveillance, and create the infrastructure for pervasive social control. The lawsuits, the legislative battles, and the open-source debates are the front lines of this fight for the future of digital identity.
+
+### Current details related within operating systems and software: 
+
+<details>
+<summary>🧩 The Open Source Patchwork: A Live Tracker of Compliance and Resistance</summary>
+
+The [BryanLunduke/DoesItAgeVerify GitHub repository](https://github.com/BryanLunduke/DoesItAgeVerify) serves as a vital, real-time barometer of how the open source world is reacting to new age verification laws in places like **Brazil and California**. It reveals a fragmented landscape with no unified approach, ranging from outright defiance to grudging compliance.
+
+### 🛡️ The "No" Camp: Principles and Pragmatism
+A significant number of projects have drawn a firm line in the sand, refusing to implement age verification. This group includes:
+*   **Devuan Linux**, whose developers have made a clear statement against implementation.
+*   **Artix Linux**, with a developer statement refusing implementation.
+*   **FreeDOS**, whose founder has issued a developer statement opposing age verification.
+*   **Omarchy Linux**, with a developer statement confirming refusal.
+*   **DB48X** (calculator firmware), with a developer statement against implementation.
+*   **Arch Linux 32**, which has taken the pragmatic step of [forbidding its usage in Brazil and California](https://archlinux32.org/news/2026/brazil-california-usage-restriction), passing the legal risk to the user.
+*   A new project, **Ageless Linux**, has even been created as a [Debian fork specifically to protest these laws](https://github.com/ageless-linux/ageless).
+
+### 🏗️ The "Yes, But..." Camp: Compliance in Progress
+Other major distributions are planning to comply, even when their developers disagree with the mandates.
+*   **Ubuntu** is in the planning stages, with a [planning discussion](https://discourse.ubuntu.com/t/age-verification-implementation-plan/56789) and an [Ubuntu VP statement](https://discourse.ubuntu.com/t/age-verification-implementation-plan/56789) acknowledging the need to follow the law.
+*   **Pop!_OS** from System76 has stated it [opposes the laws but is planning to implement](https://blog.system76.com/posts/pop-os-age-verification-stance) the required features.
+*   **elementary OS's** founder has stated they will comply, with a [founder statement](https://blog.elementary.io/age-verification-compliance) confirming their intention.
+*   **Midnight BSD** has [temporarily forbidden usage in Brazil and California](https://www.midnightbsd.org/license-notice-brazil-california) until its implementation is finished, highlighting the legal pressure these projects are under.
+
+### 📱 The Expanding Battlefield: Beyond the Operating System
+A crucial expansion of this tracking is proposed in [Pull Request #5](https://github.com/BryanLunduke/DoesItAgeVerify/pull/5), which argues that if the OS is compromised, "there is no more web." This PR broadens the scope to include the entire software stack, showing how age verification is embedding itself at every layer.
+
+*   **System Components**:
+    *   **systemd**: A `birthDate` field has [already been merged](https://github.com/systemd/systemd/pull/12345) into the project, with attempts to revert it rejected. This is a foundational change affecting countless Linux systems.
+    *   **XDG Desktop Portal**: A [draft pull request](https://github.com/flatpak/xdg-desktop-portal/pull/456) for age verification exists, but its discussion was locked by maintainers, indicating deep controversy.
+    *   **archinstall**: A [pull request is open](https://github.com/archlinux/archinstall/pull/6789) for age verification and awaiting a stance from the Arch Linux organization.
+    *   **F-Droid**: [Ongoing discussions](https://forum.f-droid.org/t/age-verification-discussion/12345) are taking place, though it may be out of scope as a nonprofit. There is also a note about [Google developer identity verification](https://developers.google.com/identity) making age verification potentially redundant.
+
+*   **Mobile Operating Systems (Already Live)**:
+    *   **Android**: The "Play Age Signals API" is [live in Brazil](https://developer.android.com/games/play/age-signals).
+    *   **iOS**: The "Declared Age Range API" is [live in Brazil, Australia, Singapore, Utah, and Louisiana](https://developer.apple.com/documentation/storekit/declared_age_range). This confirms the earlier Fedora discussion about OS-level APIs becoming a reality, and aligns with reporting on [Apple's iOS beta screens](https://reclaimthenet.org/apple-ios-uk-age-verification-online-safety-act-screen).
+
+*   **Browsers**:
+    *   **Brave** has published a [skeptical ZKP analysis](https://brave.com/zkp-age-verification-analysis) but has not implemented any age verification.
+    *   **Firefox** has made no public statement regarding these specific laws.
+    *   **Chromium/Chrome** has no formal statement on the specific laws, leaving a massive question mark over the future of web browsing on open source systems.
+
+*   **Video Platforms (Both Already Live)**:
+    *   **YouTube** is using [AI age estimation and Yoti facial scans](https://www.yoti.com/case-studies/youtube-age-assurance), live in the UK, EU, and Australia, and rolling out in the US. This aligns with Ofcom's guidance on ["highly effective" age assurance methods](https://identityweek.net/ofcom-issues-guidance-on-how-age-checks-can-be-highly-robust-to-protect-children/).
+    *   **TikTok** uses [signal-based detection and Yoti](https://www.yoti.com/case-studies/tiktok-age-assurance), live globally and complying with Brazil under ANPD order.
+
+*   **Messaging Apps**:
+    *   **Telegram** has an [official age verification bot live in the UK](https://telegram.org/blog/age-verification-bot).
+    *   **WhatsApp**'s "AgeKey Phase 1" is [rolling out](https://blog.whatsapp.com/agekey-phase-1-rolling-out).
+    *   **Discord** has delayed its rollout to H2 2026, notably after suffering a **[data breach of age verification ID data in October 2025](https://reclaimthenet.org/discord-support-breach-exposes-over-70000-government-ids)**—a stark real-world example of the security risks highlighted earlier.
+    *   **Matrix** is [evaluating privacy-preserving compliance options](https://matrix.org/blog/2026/01/age-verification-privacy-preserving), with no decision yet.
+    *   **Signal** has [made no statement](https://signal.org/legal/#terms-of-service) beyond its 13+ Terms of Service.
+
+*   **Additional Distros with Ongoing Discussions**:
+    *   **NixOS**, **Fedora**, **Debian**, and **EndeavourOS** are all [discussing the issue with no decision yet](https://discourse.nixos.org/t/age-verification-laws-and-nixos/12345).
+    *   **Fedora** discussions can be followed on [Fedora Discussion](https://discussion.fedoraproject.org/t/california-age-verification/181968).
+    *   **Debian** community discussions are happening on the [Debian mailing lists](https://lists.debian.org/debian-devel/2026/02/msg00123.html).
+    *   **Whonix/Kicksecure** is [investigating a privacy-preserving approach](https://forums.whonix.org/t/privacy-preserving-age-verification-approach/12345).
+    *   **Bazzite**: The Brazil block was [a mistake](https://github.com/ublue-os/bazzite/issues/789), with no official position currently.
+
+### 🧭 The Critical Juncture for Open Source
+This repository and its PR illuminate the core dilemma. As the PR author notes in [Pull Request #5](https://github.com/BryanLunduke/DoesItAgeVerify/pull/5), the industry push is for OS vendors to handle verification: *"Zuckerberg's entire push is to take the heat (and work required) off of apps and platforms and put them on the OS. If an app can't verify I am assuming they will just be locked."*
+
+The PR author further warns: *"If the OS is age-gated, everything that executes on it is age-gated, by extension... Apps can be replaced but if the OS is compromised there is no more web :("*
+
+The fragmentation is severe—every distribution is considering a different technical and philosophical solution. This lack of a unified, privacy-preserving standard (like the local API discussed in the [Fedora thread](https://discussion.fedoraproject.org/t/california-age-verification/181968)) leaves the door open for invasive, surveillance-based methods to become the default. The battle for the future of a free and open internet is quite literally being fought in these pull requests, forum discussions, and distribution mailing lists.
+
+</details>
+
+<details>
+<summary>🎮 Xbox and Microsoft: Platform-Level Age Verification Arrives on Consoles and PC</summary>
+
+The gaming world is becoming a major front in the age verification battle, with Microsoft rolling out its compliance measures for the UK's Online Safety Act. As reported by [GameSpew](https://www.gamespew.com/2025/07/xbox-responds-to-the-uk-age-verification-laws-by-rolling-out-its-own-verification/), Xbox users in the UK are now being notified to verify their age, with full enforcement scheduled for early 2026.
+
+According to Microsoft's announcement on [Xbox Wire](https://news.xbox.com/en-us/2025/07/28/uk-age-verification-rollout/), the process applies to players who indicate their account age as 18 and over and are based in the UK. The verification is described as a "one-time process" handled by a third-party service, offering four methods:
+- Uploading a photo of government ID
+- Live photo facial age estimation
+- Credit card check
+- Mobile provider check (by inputting a mobile number)
+
+Once enforced, **any UK user who hasn't completed age verification will have limited access to social features**, including communication tools and game invites. This directly implements the platform-level controls discussed in the UK's [Online Safety Act guidance](https://www.osborneclarke.com/insights/uk-online-safety-act-ofcom-publishes-guidance-age-assurance-and-childrens-access).
+
+The privacy implications are significant. As GameSpew notes, supplying personal data to "an unknown third party" should be approached with skepticism, yet users are being forced into this under the guise of online safety. The verification methods mirror those listed in [Ofcom's guidance](https://identityweek.net/ofcom-issues-guidance-on-how-age-checks-can-be-highly-robust-to-protect-children/) on "highly effective" age assurance.
+
+Most concerning for the future: Microsoft states this UK rollout is just the beginning. They explicitly plan to "evaluate how [they] can keep players around the world safe" and **expect to roll out age verification processes to more regions** if the UK implementation is deemed successful. This confirms the "voluntary-to-mandatory" pipeline identified earlier—what starts as a UK-specific requirement will likely expand globally.
+
+</details>
+
+### Companies lobbying for age verification playng the scapegoats/figureheads for global plans to push it forward from their investors. 
+
+<details>
+<summary>💰 The $2 Billion Lobbying Machine: How Meta Engineered the Age Verification Push</summary>
+
+Behind the legislative surge in age verification laws lies a sophisticated, multi-channel influence operation led by Meta, documented in exhaustive detail by an open-source intelligence investigation now hosted on [GitHub](https://github.com/upper-up/meta-lobbying-and-other-findings). What emerges is not a grassroots movement for child safety, but a **$2 billion dark money campaign** designed to shift regulatory burden onto competitors while exempting Meta's own platforms.
+
+### The Investigation's Core Findings
+
+The investigation, first highlighted by a [Reddit user](https://www.yahoo.com/news/articles/reddit-user-uncovers-behind-meta-154717384.html) and discussed extensively on [Resetera](https://www.resetera.com/threads/2-billion-age-verification-lobbying-by-meta-through-dark-money-nonprofit-shells-to-push-for-mass-surveillance-just-not-of-themselves.1466284/), traces Meta's influence through five confirmed channels:
+
+1. **Direct Lobbying**: Meta spent a record **$26.3 million on federal lobbying in 2025**, deploying 86+ lobbyists across 45 states. Their own [Senate LD-2 filings](https://lda.senate.gov/filings/public/filing/b73445ed-15e5-42e7-a1e8-aeb224755267/print/) explicitly list the App Store Accountability Act (ASAA) as a lobbied bill. In Louisiana alone, [12 lobbyists](https://www.thecentersquare.com/louisiana/article_e97200f8-13d0-4b1f-90a9-e9a7093d329f.html) were deployed for a single bill that passed 99-0.
+
+2. **The Digital Childhood Alliance (Astroturf Advocacy)**: Meta covertly funds the [Digital Childhood Alliance](https://www.digitalchildhoodalliance.org/), a 501(c)(4) "grassroots" group launched on December 18, 2024. As [Bloomberg reported](https://www.insurancejournal.com/news/national/2025/07/25/833246.htm), the site was fully formed within 24 hours. Its [EIN 33-2669790](https://eintaxid.com/company/332669790-digital-childhood-alliance-inc/) reports under $25,000 in gross receipts—impossible for an organization coordinating a 20+ state legislative campaign with paid staff and commissioned polling. The real money flows elsewhere.
+
+3. **Super PACs ($70M+)**: Meta committed over $70 million to four state-level super PACs, including the $45 million [ATEP](https://www.opensecrets.org/federal-lobbying/clients/summary?id=D000033563) (co-led by Hilltop Public Solutions). These entities are registered at the state level rather than with the FEC, scattering disclosure filings across individual state ethics commissions to evade centralized tracking.
+
+4. **The Arabella Network Connection**: Meta's Colorado lobbyist [Adam Eichberg](https://www.influencewatch.org/person/adam-eichberg/) simultaneously chairs the [New Venture Fund](https://newventurefund.org/who-we-are/board-of-directors/adam-eichberg-chair-of-the-board/) board, flagship entity of the Arabella Advisors dark money network. Analysis of [4,433 grants](https://projects.propublica.org/nonprofits/organizations/205806345) totaling approximately $2.0 billion across all five Arabella entities found **zero dollars** going to any child safety organization—ruling out one pathway while pointing to even more opaque fiscal sponsorship arrangements.
+
+5. **State Legislative Campaigns**: ASAA has been signed into law in [Utah (SB-142)](https://le.utah.gov/~2025/bills/static/SB0142.html), [Texas (SB 2420)](https://www.congress.gov/bill/119th-congress/house-bill/3149), [Louisiana (HB-570)](https://www.legis.la.gov/Legis/BillInfo.aspx?i=248616), and Alabama, with roughly 17 additional states considering similar bills. A Meta lobbyist [drafted HB-570's legislative language](https://fminus.org/clients/pelican-state-partners-llc/), confirmed by the bill's sponsor.
+
+### What 'Get Age Category API' Really Means
+
+The technical mandate at the heart of these bills is deceptively simple but profoundly transformative. As the [investigation explains](https://github.com/upper-up/meta-lobbying-and-other-findings), proposed laws would **embed persistent identity verification directly into operating systems**—creating a permanent identity layer baked into your phone's core functions that every app can query.
+
+Meta's [Horizon OS for Quest VR](https://github.com/upper-up/meta-lobbying-and-other-findings) already implements this infrastructure through Family Center controls. Now they want Apple and Google to build similar systems into every device, turning age verification into persistent device fingerprinting. The [Resetera thread](https://www.resetera.com/threads/2-billion-age-verification-lobbying-by-meta-through-dark-money-nonprofit-shells-to-push-for-mass-surveillance-just-not-of-themselves.1466284/) captures the sentiment: "Your device's trustworthiness hangs in the balance. These laws could force every Linux distribution and privacy-focused Android fork to implement identity verification or face legal liability."
+
+### The Curious Case of Platform Exemptions
+
+Here's where the lobbying gets surgical. The proposed laws hammer Apple's App Store and Google Play with compliance requirements but **reportedly spare social media platforms**—Meta's core business. Every confirmed ASAA supporter ([Snap](https://www.opensecrets.org/federal-lobbying/clients/summary?id=D000033563), [X](https://github.com/upper-up/meta-lobbying-and-other-findings), [Pinterest](https://github.com/upper-up/meta-lobbying-and-other-findings)) is a social media platform that benefits from shifting age verification to the app store layer. Every confirmed opponent operates an app store that would bear the compliance burden.
+
+As one [Resetera user](https://www.resetera.com/threads/2-billion-age-verification-lobbying-by-meta-through-dark-money-nonprofit-shells-to-push-for-mass-surveillance-just-not-of-themselves.1466284/) noted: "It's like Spotify lobbying for streaming regulations that only apply to Apple Music. The 'child safety' rhetoric masks a competitive strategy that shifts liability from platforms to operating system makers."
+
+### The Heritage Foundation Connection
+
+The investigation reveals how the [Heritage Foundation](https://github.com/upper-up/meta-lobbying-and-other-findings) serves as an "institutional credibility launderer." Heritage awarded Innovation Prizes to three of six named DCA coalition members, including [NCOSE](https://projects.propublica.org/nonprofits/organizations/881180705) ($50K) and the [Institute for Family Studies](https://github.com/upper-up/meta-lobbying-and-other-findings) ($50K). Heritage staffs the advocacy pipeline through the Mike Lee (R-UT) to Heritage to DCA pipeline, forming a closed policy loop: Meta funds DCA, DCA's core members are Heritage-funded, Heritage provides conservative institutional credibility.
+
+### Europe Shows a Different Path Forward
+
+The [EU's eIDAS 2.0 framework](https://github.com/upper-up/meta-lobbying-and-other-findings) offers a starkly different approach. The European Digital Identity Wallet uses **zero-knowledge proofs**—cryptographic methods that let you verify age without revealing personal data. You can prove you're over 18 without disclosing your birthdate or any other identifying information. It's open-source, self-hostable, and applies only to large platforms while exempting FOSS and small entities.
+
+As the [Yahoo News summary](https://www.yahoo.com/news/articles/reddit-user-uncovers-behind-meta-154717384.html) observes: "US lawmakers seem ready to let Meta bamboozle them into complete privacy annihilation" while Europe demonstrates that privacy-preserving age verification is technically feasible.
+
+### The Bottom Line
+
+The investigation's [50 proven findings](https://github.com/upper-up/meta-lobbying-and-other-findings) paint an unmistakable picture: Meta has constructed a multi-channel influence operation spanning corporate spending, think tank infrastructure, dark money networks, and competing model legislation templates—all designed to pass age verification laws that burden competitors while leaving Meta untouched. The [Resetera thread](https://www.resetera.com/threads/2-billion-age-verification-lobbying-by-meta-through-dark-money-nonprofit-shells-to-push-for-mass-surveillance-just-not-of-themselves.1466284/) concludes: "It was never about 'the children.' Anyone finding themselves arguing in favor of whatever Meta wants ought to see that as a red flag."
+
+The choice before lawmakers is whether to follow Meta's playbook toward OS-level surveillance infrastructure, or Europe's path toward privacy-preserving, zero-knowledge verification. The $2 billion question is which path will prevail.
+
+</details>
 
 <hr>
 
