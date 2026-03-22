@@ -284,6 +284,8 @@ The British cybernetician Stafford Beer coined the phrase **"The purpose of a sy
 
 </details>
 
+---
+
 <details>
 <summary><b>Hardware Privacy / Security:</b></summary>
 <details>
@@ -582,6 +584,27 @@ Community discussion on RISC-V and alternatives often highlights the lack of opa
 
 <details>
 <summary><b>OS Privacy / Security:</b></summary>
+
+### 🖥️ OS Comparison at a Glance
+
+| OS | Type | Best For… | Key Security / Privacy Feature | Trade‑off |
+|----|------|-----------|-------------------------------|----------|
+| **Qubes OS** | Security‑focused Linux (Xen hypervisor) | Users who need strong isolation between activities (e.g., compartmentalised work, high‑threat models). | **Compartmentalisation** – every app runs in a separate, hardware‑isolated VM (“qube”); disposable VMs; integrated firewall and VPN support. | Steep learning curve; resource‑heavy (needs recent hardware with VT‑x/AMD‑V); some hardware compatibility issues; not for casual use. |
+| **Proxmox VE** | Virtualisation platform (Debian‑based) | Self‑hosting, server virtualisation, labs, and running multiple OSes with high performance. | **Flexible virtualisation** – supports KVM and LXC; advanced networking; GPU passthrough; open‑source; can be managed via web UI. | Not a desktop OS; requires dedicated hardware or a powerful workstation; administration overhead; less suitable for pure desktop use. |
+| **Whonix** | Anonymity‑focused OS (based on Debian) | Users who need to force all traffic through Tor for anonymity (e.g., activists, journalists). | **Tor‑forced networking** – two‑VM design (Gateway + Workstation) ensures no IP leaks; transparent Torification. | Slower due to Tor; usability friction; requires virtualisation (VirtualBox or KVM); not a daily driver for most. |
+| **OpenBSD** | BSD Unix | Servers, firewalls, and users prioritising code correctness and minimal attack surface. | **Proactive security** – extensive code auditing; integrated cryptography; pledge/unveil; minimal default installation; excellent documentation. | Not user‑friendly for beginners; hardware support is limited; desktop experience is rudimentary; niche use. |
+| **Linux Mint** | Desktop Linux (Ubuntu‑based) | Newcomers from Windows who want a polished, user‑friendly experience. | **Stable and comfortable** – Cinnamon desktop resembles Windows; good driver support; optional telemetry can be disabled. | Privacy is not its primary focus; defaults may include some Ubuntu telemetry; less aggressive hardening out‑of‑the‑box. |
+| **Pop!_OS** | Desktop Linux (Ubuntu‑based, by System76) | Gamers, developers, and users needing good hardware support (especially NVIDIA). | **Optimised for workflows** – automatic window tiling; out‑of‑the‑box GPU support; System76’s open firmware initiatives. | Still Ubuntu‑based, so inherits some telemetry concerns; privacy not its primary marketing; limited to System76 hardware for full firmware benefits. |
+| **Fedora** | Desktop Linux (upstream of Red Hat) | Users wanting a modern, up‑to‑date distribution with strong security defaults. | **Cutting‑edge yet stable** – SELinux enabled by default; timely security updates; strong open‑source philosophy. | May require manual hardening for extreme privacy; some telemetry? (Fedora generally respects privacy but connects for updates). |
+| **Debian** | Universal Linux | Users who value stability, free software, and broad hardware support. | **Rock‑solid stability** – strict free software guidelines; security team; can be hardened extensively. | Older packages in stable; may require configuration for advanced privacy; not as user‑friendly as Mint/Pop!_OS. |
+| **Arch Linux** | Rolling‑release Linux | Enthusiasts who want to build their system from the ground up. | **Minimal and transparent** – no unnecessary packages; user controls every component; excellent documentation (Arch Wiki). | Not beginner‑friendly; requires constant attention to updates; manual configuration for privacy. |
+| **Windows (AME / Atlas / Revi)** | Modified Windows (based on Windows 10/11) | Users forced to use Windows but wanting to strip telemetry, bloatware, and surveillance features. | **Aggressive debloating** – AME Playbooks, AtlasOS, ReviOS, RapidOS remove telemetry, Edge, OneDrive, and background services; aim for performance and privacy. | Unofficial modifications – no guarantee of security updates; must reinstall to switch playbooks; can break Windows Update; not recommended for high‑risk users. |
+| **Windows (stock)** | Proprietary OS | General users who need compatibility with proprietary software and games. | – | **Designed for data collection** – extensive telemetry, forced updates, advertising in UI, integration with Microsoft services. |
+
+- **Qubes** is recommended for those with the highest threat models, especially when combined with Whonix (via the built‑in Whonix templates).
+- **Proxmox** is praised for self‑hosting and virtualisation, particularly for GPU passthrough and LXC containers.
+- **OpenBSD** is noted for its minimal attack surface but is not a daily driver for most desktop users.
+- **Windows modifications** (AME, Atlas, Revi, Rapid) are presented as a way to salvage privacy on Windows, but they are unofficial, require a clean install, and may introduce stability or security risks.
   
 ### Suggested OS:
 <br> #1 [QubesOS](https://www.qubes-os.org/) - For heightened Security / Pirvacy and a compartmented OS on a single PC via the Xen hypervisor base. features some very interesting methods for security and is worth checking out if you value security / privacy as your top priority. 
@@ -638,7 +661,15 @@ Additional Resources:
 
 <details>
   <summary><b>Other options:</b></summary>
-  [OpenBSD](https://www.openbsd.org/) - minimal attack surface, but not great for end users, more suited to servers and use cases are pretty niche, so not a great choice for most users but worth a mention for the level of security provided. 
+
+  * **Whonix** – [https://www.whonix.org/](https://www.whonix.org/)
+  * **OpenBSD** – [https://www.openbsd.org/](https://www.openbsd.org/)
+  * **Linux Mint** – [https://linuxmint.com/](https://linuxmint.com/)
+  * **Pop!_OS** – [https://pop.system76.com/](https://pop.system76.com/)
+  * **Fedora** – [https://fedoraproject.org/](https://fedoraproject.org/)
+  * **Debian** – [https://www.debian.org/](https://www.debian.org/)
+  * **Arch Linux** – [https://archlinux.org/](https://archlinux.org/)
+
 </details>
 
 <details>
@@ -664,13 +695,22 @@ Additional Resources:
 
 ### Software: 
 
-- [Awesome Privacy](https://github.com/pluja/awesome-privacy) - A curated collection of privacy-focused software and tools designed to enhance your online and offline privacy and security.
+- [pluja/Awesome Privacy](https://github.com/pluja/awesome-privacy) - A curated collection of privacy-focused software and tools designed to enhance your online and offline privacy and security.
+
+- [paulaime/Awesome-Privacy](https://github.com/paulaime/Awesome-Privacy) - A curated list of tools and services that respect your privacy.
 
 ### Password managers: 
 - Browser / Linux / MacOS/ Win: [KeePassXC](https://keepassxc.org/)
 - Android: [KeePassDX](https://www.keepassdx.com/)
 
 ### Firewall/Networking:
+| Tool | Platform | Type / Key Feature | Licensing | Trade‑off / Note |
+|------|----------|--------------------|-----------|------------------|
+| **OpenSnitch** | Linux | Interactive application firewall; outbound connection filtering, system‑wide blocklists, nftables integration. | Open source (GPL) | Requires manual rule management; learning curve for advanced features. |
+| **SimpleWall** | Windows | Lightweight front‑end for Windows Filtering Platform (WFP); blocks all apps by default; built‑in telemetry blocklist. | Open source (GPLv3) | No interaction with Windows Firewall; temporary rules reset on reboot; requires admin rights. |
+| **Little Snitch** | macOS | Network monitor with per‑app connection alerts; DNS encryption (DoH/DoT/DoQ); blocklist support. | Proprietary (commercial) | Paid software (30‑day trial); macOS only; advanced features may be overwhelming for casual users. |
+| **Safing Portmaster** | Windows / Linux | Network monitor and firewall; blocks trackers by default; offers “SPN” (privacy network) add‑on. | Open source core; free | Still in active development (v2 stable available); some features require paid SPN subscription. |
+| **NetLimiter** | Windows | Per‑application bandwidth limits, real‑time monitoring, connection blocking, quotas. | Proprietary (commercial) | Paid software (free trial); Windows only; primarily focused on bandwidth control rather than outbound filtering. |
 - Linux: [OpenSnitch](https://github.com/evilsocket/opensnitch) - Network monitoring and rule-based control.  
 - Windows: [SimpleWall](https://github.com/henrypp/simplewall) - Windows firewall management and rules.  
 - Mac: [LittleSnitch](https://www.obdev.at/products/littlesnitch/index.html) - Network monitoring and control.  
@@ -737,13 +777,32 @@ Here are the leading privacy-focused alternatives, categorized by their philosop
 
 ### 🏆 Browser Comparison at a Glance
 
-| Browser | Engine | Best For... | Key Privacy Feature | Trade-off |
-| :--- | :--- | :--- | :--- | :--- |
-| **LibreWolf** | Gecko (Firefox) | Advanced users wanting maximum hardening out-of-the-box. | Anti-fingerprinting; removes all Mozilla telemetry. | Can cause site breakage; project has no legal entity; developers enforce an explicit political stance, banning users perceived as "far-right." |
-| **Mullvad Browser** | Gecko (Firefox) | Anonymity *without* the Tor Network; pairing with a VPN. | Designed to make all users look identical to resist tracking. | Not a Tor replacement; requires a trusted VPN for IP anonymity. |
-| **Tor Browser** | Gecko (Firefox ESR) | High-risk anonymity needs (journalists, activists, dissidents). | Routes all traffic through the Tor network; makes users indistinguishable. | Can be slow; frequent site breakage due to high-security network. |
-| **Brave** | Blink (Chromium) | Everyday users wanting strong, easy privacy with good usability. | Blocks ads/trackers by default; built-in fingerprinting protection. | Chromium-based; past controversies over affiliate link hijacking; founder's political donations; questionable marketing practices. |
-| **Safari** | WebKit | Apple ecosystem users wanting a solid, integrated baseline. | Intelligent Tracking Prevention (ITP) is highly effective. | Tied to Apple ID and telemetry; limited extension ecosystem. |
+| Browser | Engine | Best For... | Key Privacy Feature | Trade‑off |
+|---------|--------|-------------|---------------------|----------|
+| **LibreWolf** | Gecko (Firefox) | Advanced users wanting maximum hardening out‑of‑the‑box. | Anti‑fingerprinting; removes all Mozilla telemetry; includes uBlock Origin. | Can cause site breakage; no legal entity; no auto‑updates; explicit political stance. |
+| **Mullvad Browser** | Gecko (Firefox) | Anonymity *without* the Tor network; pairing with a trusted VPN. | Designed to make all users look identical; clears all state on close. | Not a Tor replacement; requires a VPN for IP anonymity; usability friction. |
+| **Tor Browser** | Gecko (Firefox ESR) | High‑risk anonymity needs (journalists, activists, dissidents). | Routes all traffic through the Tor network; New Identity feature. | Slow; frequent site breakage due to high‑security network. |
+| **Brave** | Blink (Chromium) | Everyday users wanting strong, easy privacy with good usability. | Blocks ads/trackers by default; built‑in fingerprinting protection; offline Tor window. | Chromium‑based; past controversies (affiliate hijacking); built‑in crypto may be unwanted. |
+| **GNU IceCat** | Gecko (Firefox) | Free software purists who prioritise ideology over convenience. | LibreJS blocks non‑free JavaScript; pre‑hardened; removes all proprietary components. | Strict blocking breaks many websites; volunteer‑run with potential update delays. |
+| **ungoogled‑chromium** | Blink (Chromium) | Users who need Chromium compatibility without Google integration. | Removes all background requests to Google services. | Small team can lag behind security updates; pre‑built binaries carry tampering risk. |
+| **Falkon** | Qt WebEngine (Chromium) | KDE users wanting a lightweight, integrated browser. | No unsolicited connections; built‑in ad blocking. | Not all privacy features enabled by default; basic ad blocking. |
+| **qutebrowser** | Qt WebEngine (Chromium) | Vim users wanting a keyboard‑driven, minimalist browser. | Does nothing without user consent; highly configurable. | DNS prefetching on by default; ad blocking is hosts‑file based. |
+| **Orion (Kagi)** | WebKit | Mac/iOS users who want WebKit speed with Chrome/Firefox extension support. | Zero‑telemetry; built‑in ad blocking; supports custom blocklists. | Paid model for full features; extension compatibility not universal; Linux/Windows are alpha. |
+| **Iceraven (Android)** | Gecko (Fenix) | Android enthusiasts who want maximum customisation and add‑on support. | Expanded add‑on support; direct `about:config` access; removes most telemetry. | **No warranties or guarantees**; most add‑ons do not work; binaries signed with debug key. |
+
+### 🍎 Safari (WebKit)
+
+| Best For... | Key Privacy Feature | Trade‑off |
+|-------------|---------------------|----------|
+| Apple ecosystem users wanting a solid, integrated baseline. | Intelligent Tracking Prevention (ITP) is highly effective; good fingerprinting resistance. | Tied to Apple ID and telemetry; limited extension ecosystem; engine is proprietary to Apple. |
+
+---
+
+### 🦊 Mozilla Firefox (Gecko)
+
+| Best For... | Key Privacy Feature | Trade‑off |
+|-------------|---------------------|----------|
+| Users who want a balance of mainstream support and tweakability. | Highly configurable; can be hardened with Arkenfox user.js for extreme privacy. | **Not private out‑of‑the‑box**; phones home to Mozilla; Cloudflare DoH integration; Google funding creates conflict of interest. |
 
 <br>
 
@@ -1178,6 +1237,67 @@ Your mobile browser choices are even more critical than desktop ones, as mobile 
 **Browser implication:** Even the most hardened browser (LibreWolf, Tor, Mullvad) connects to a network where the underlying encryption may be compromised. This doesn't mean you shouldn't use them—they're essential—but it means you must layer defenses. Use Tor for network anonymity, VPNs for IP masking, and treat all encrypted traffic as potentially observable by sufficiently motivated adversaries.
 
 </details>
+
+* * *
+
+## 🚫 Ad Blockers
+
+| Tool | Platform | Key Feature | Licensing | Trade‑off / Note |
+|------|----------|-------------|-----------|------------------|
+| **uBlock Origin** | Browser extension | Lightweight, highly efficient content blocker | Open source (GPL) | Firefox Android only supports a limited set of extensions; does not block in‑app ads. |
+| **AdAway** | Android | Hosts‑file based ad blocker, requires root | Open source (GPL) | No root = limited functionality; may need to use VPN‑based alternatives. |
+| **AdGuard** | Win, Mac, Android, iOS | System‑wide ad blocking, DNS filtering | Proprietary (freemium) | Free version is browser‑only; paid apps cost money; some privacy concerns about the company. |
+| **Blokada** | Android, iOS | VPN‑based ad blocker, no root | Open source (GPL) | Uses VPN slot; can conflict with real VPNs; iOS version limited. |
+| **Pi‑hole** | Network‑wide (any device) | DNS‑level blocking for entire network | Open source (GPL) | Requires a dedicated device (Raspberry Pi, etc.); does not block ads in YouTube (DNS level). |
+| **pfSense + pfBlockerNG** | Network‑wide (requires pfSense firewall) | DNS‑level blocking (DNSBL) + IP reputation filtering + GeoIP blocking; operates at firewall level | Open source (BSD‑style for pfSense; pfBlockerNG is free package) | Requires pfSense as base system; complex setup; overkill for casual users; needs dedicated hardware or VM. |
+
+<details><summary>Notes on Pi‑hole</summary>
+  
+- **What it is:** Pi‑hole is a free, open‑source DNS‑based ad blocker that runs on a variety of platforms. It acts as a DNS sinkhole for your entire network, intercepting requests to known ad, tracker, and malware domains before they reach the client .
+
+- **How it works:** You configure your router to hand out Pi‑hole’s IP address as the DNS server for all devices. When a device requests a domain that is on one of Pi‑hole’s blocklists, Pi‑hole returns a null address (e.g., `0.0.0.0`), effectively blocking the request at the DNS level .
+
+- **Key features:**
+  - **Centralised management** – Blocklist updates, whitelists, and statistics are controlled from a lightweight web interface .
+  - **Extensive blocklist support** – Works with many pre‑curated lists (e.g., StevenBlack, EasyList, OISD) and allows custom lists .
+  - **Low resource usage** – Can run on a Raspberry Pi Zero, Docker container, old hardware, or even a virtual machine .
+  - **Conditional forwarding** – Can forward internal domain requests to your existing DNS server if needed .
+  - **API support** – Allows integration with home automation and monitoring tools .
+
+- **Limitations:**
+  - **DNS‑level only** – Cannot block content that is served from the same domain as the main site (e.g., YouTube ads) because the domain itself cannot be blocked without breaking the service .
+  - **Bypass potential** – Any client that manually changes its DNS settings (e.g., to `8.8.8.8`) will circumvent Pi‑hole entirely. This can be mitigated by blocking outbound DNS at the firewall .
+  - **No IP‑based blocking** – Unlike pfBlockerNG, Pi‑hole does not natively block by IP reputation or GeoIP (though you can integrate with tools like `ipset` on a router) .
+
+- **Hardware / deployment options:**
+  - **Raspberry Pi** – Most popular choice; runs on any Pi model (Zero W or higher recommended for network performance) .
+  - **Docker** – Easy to run on any Linux server or NAS .
+  - **Virtual machine** – Works on Proxmox, VMware, VirtualBox, etc. .
+  - **Cloud / VPS** – Can be hosted remotely, but then all DNS traffic must be routed over the internet .
+
+- **Comparison with pfSense + pfBlockerNG:** Pi‑hole is simpler to set up and works with almost any router. pfBlockerNG, being part of a full firewall OS, offers deeper integration (e.g., IP blocking, GeoIP) and ensures that clients cannot bypass the filter by changing DNS settings. However, pfBlockerNG requires a pfSense installation, which is a larger commitment than a lightweight Pi‑hole .
+
+</details>
+
+<details><summary>Notes on pfSense + pfBlockerNG</summary>
+  
+- **pfSense** is a free, open‑source firewall and router distribution based on FreeBSD .
+- **pfBlockerNG** is an add‑on package that extends pfSense with:
+  - **DNS‑based ad and malicious site blocking** (DNSBL) using blacklists like EasyList, StevenBlack, and Adaway .
+  - **IP‑based filtering** – blocks traffic to/from known malicious IP addresses .
+  - **GeoIP filtering** – allows or denies traffic based on country of origin (requires free MaxMind license) .
+- **Key advantage over Pi‑hole:** Because pfBlockerNG operates at the firewall level, clients **cannot bypass** the blocking by changing their DNS settings. The firewall enforces the policy for all devices on the network .
+- **Setup complexity:** Requires a working pfSense installation and manual configuration of feeds, aliases, and firewall rules . Not recommended for users without networking experience.
+- **Hardware:** pfSense can run on dedicated x86 hardware, virtual machines (Proxmox, VMware, etc.), or low‑power appliances (Protectli, PC Engines APU, etc.) .
+</details>
+
+* **uBlock Origin** – [https://github.com/gorhill/uBlock](https://github.com/gorhill/uBlock)
+* **AdAway** – [https://github.com/AdAway/AdAway](https://github.com/AdAway/AdAway)
+* **AdGuard** – [https://adguard.com/](https://adguard.com/)
+* **Blokada** – [https://blokada.org/](https://blokada.org/)
+* **Pi‑hole** – [https://pi-hole.net/](https://pi-hole.net/)
+* **pfSense** – [https://www.pfsense.org/](https://www.pfsense.org/)  
+  *(pfBlockerNG is a package available within pfSense; documentation: [https://docs.netgate.com/pfsense/en/latest/packages/pfblocker.html](https://docs.netgate.com/pfsense/en/latest/packages/pfblocker.html))*
 
 * * *
 
