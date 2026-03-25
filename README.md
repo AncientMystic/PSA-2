@@ -157,10 +157,29 @@ Other major distributions are planning to comply, even when their developers dis
 A crucial expansion of this tracking is proposed in [Pull Request #5](https://github.com/BryanLunduke/DoesItAgeVerify/pull/5), which argues that if the OS is compromised, "there is no more web." This PR broadens the scope to include the entire software stack, showing how age verification is embedding itself at every layer.
 
 *   **System Components**:
-    *   **systemd**: A `birthDate` field has [already been merged](https://github.com/systemd/systemd/pull/40954) into the project, with attempts to revert it rejected. This is a foundational change affecting countless Linux systems.
+    *   **systemd**: A `birthDate` field has [already been merged](https://github.com/systemd/systemd/pull/40954) into the project, with attempts to revert it rejected. This is a foundational change affecting countless Linux systems. [Related article](https://www.webpronews.com/systemd-now-has-an-age-verification-api-and-that-should-worry-everyone-who-builds-or-uses-linux/) (A Microsoft employee added an age verification API to systemd, raising concerns about corporate influence over Linux’s core infrastructure.)
+ <br> **An Alternative to systemd**: [Liberated systemd](https://github.com/Jeffrey-Sardina/systemd): A hard fork that reverts the surveillance‑enabling commits (including age verification). It tracks upstream changes weekly and provides a privacy‑preserving alternative without introducing new features.
     *   **XDG Desktop Portal**: A [draft pull request](https://github.com/flatpak/xdg-desktop-portal/pull/1922) for age verification exists, but its discussion was locked by maintainers, indicating deep controversy.
     *   **archinstall**: A [pull request is open](https://github.com/archlinux/archinstall/pull/4290) for age verification and awaiting a stance from the Arch Linux organization.
     *   **F-Droid**: Ongoing discussions are taking place, though it may be out of scope as a nonprofit.
+
+<details><summary><b>Systemd Free Linux</b></summary>
+  
+*   **Devuan**: A Debian fork that replaces systemd with sysvinit, runit, or OpenRC. [https://www.devuan.org](https://www.devuan.org)
+*   **Alpine Linux**: A security-oriented, lightweight distribution using musl and OpenRC. [https://alpinelinux.org](https://alpinelinux.org)
+*   **Void Linux**: An independent rolling-release distribution with runit and XBPS. [https://voidlinux.org](https://voidlinux.org)
+*   **Artix Linux**: An Arch-based rolling distribution offering OpenRC, runit, s6, and dinit. [https://artixlinux.org](https://artixlinux.org)
+*   **antiX**: A Debian-based, ultra-lightweight distribution with runit, dinit, s6, or sysvinit options. [https://antixlinux.com](https://antixlinux.com)
+*   **Slackware**: The oldest actively maintained distro; uses traditional sysvinit (and elogind, but not systemd). [https://www.slackware.com](https://www.slackware.com)
+*   **Gentoo**: A source-based distribution where you choose your init system (OpenRC, s6, or systemd). [https://www.gentoo.org](https://www.gentoo.org)
+*   **KISS Linux**: An independent, ultra-minimalist source-based distro using busybox init. [https://kisslinux.org](https://kisslinux.org) (Note: official site may be intermittently available)
+*   **Obarun**: An Arch-based distribution using s6 as the init system. [https://obarun.org](https://obarun.org)
+*   **Puppy Linux** / **EasyOS**: Ultra-lightweight, Busybox-init-based distros focused on simplicity. [https://puppylinux.com](https://puppylinux.com) / [https://easyos.org](https://easyos.org)
+*   **GoboLinux**: A unique distro with a custom SysVinit-based system and a hierarchical filesystem. [https://gobolinux.org](https://gobolinux.org)
+*   **CRUX**: A lightweight, source-based distro using BSD-style init scripts. [https://crux.nu](https://crux.nu)
+*   **Source Mage GNU/Linux**: A source-based distro with a dedicated systemd-free channel. [https://sourcemage.org](https://sourcemage.org)
+* **Debian**: The standard installer defaults to systemd, but the Debian Net Install allows selecting alternative init systems (sysvinit, OpenRC) during installation via expert mode. https://www.debian.org
+ </details>
 
 *   **Mobile Operating Systems (Already Live)**:
     *   **Android**: The "Play Age Signals API" is [Play Age Signals API](https://developer.android.com/google/play/age-signals/overview).
