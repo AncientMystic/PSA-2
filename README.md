@@ -145,6 +145,11 @@ A significant number of projects have drawn a firm line in the sand, refusing to
 *   **DB48X** (calculator firmware), with a [developer statement](https://x.com/lundukejournal/status/2027358439991615715) against implementation.
 *   **Arch Linux 32**, which has taken the pragmatic step of [forbidding its usage in Brazil and California](https://x.com/lundukejournal/status/2033896030178029675), passing the legal risk to the user.
 *   A new project, [**Ageless Linux**](https://agelesslinux.org/), has even been created as a [Debian fork specifically to protest these laws](https://x.com/lundukejournal/status/2032951803134837237).
+*   **Slackware Linux**, with a [developer statement](https://x.com/LundukeJournal/status/2036520144239743302) refusing implementation.
+*   **Vendefoul Wolf Linux**, with [developer statements](https://x.com/lundukejournal/status/2035390136356077822) ([second statement](https://x.com/vendefoulwolf/status/2035441292520386852)) against age verification.
+*   **GrapheneOS** (Android-based mobile OS), with a [developer statement](https://x.com/lundukejournal/status/2035073741613338964) opposing implementation.
+*   **Garuda Linux**, with a [developer statement](https://x.com/LundukeJournal/status/2036164910699188456) confirming refusal.
+*   **Void Linux**, with a [developer statement](https://x.com/LundukeJournal/status/2036521455752495439) against implementation.
 
 ### 🏗️ The "Yes, But..." Camp: Compliance in Progress
 Other major distributions are planning to comply, even when their developers disagree with the mandates.
@@ -152,6 +157,7 @@ Other major distributions are planning to comply, even when their developers dis
 *   **Pop!_OS** from System76 has stated it [opposes the laws but is planning to implement](https://www.generationamiga.com/2026/03/10/linux-vendor-system76-challenges-age-verification-laws-affecting-open-source/) the required features.
 *   **elementary OS's** founder has stated they will comply, with a [founder statement](https://mastodon.social/@danirabbit@mastodon.online/116250766314705297) confirming their intention.
 *   **Midnight BSD** has [temporarily forbidden usage in Brazil and California]https://x.com/midnightbsd/status/2030992394703732872) until its implementation is finished, highlighting the legal pressure these projects are under.
+* **Fedora** [Planning Discussion](https://x.com/LundukeJournal/status/2036526650154729543) The currently supported approach, by the Fedora Project Leader (a Red Hat employee), appears to be officially adopting Apple's API regarding Age Verification.
 
 ### 📱 The Expanding Battlefield: Beyond the Operating System
 A crucial expansion of this tracking is proposed in [Pull Request #5](https://github.com/BryanLunduke/DoesItAgeVerify/pull/5), which argues that if the OS is compromised, "there is no more web." This PR broadens the scope to include the entire software stack, showing how age verification is embedding itself at every layer.
