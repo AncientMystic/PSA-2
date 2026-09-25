@@ -8,7 +8,7 @@
 
 <hr
 
-Help support more informative and helpful content with XMR/Monero: 45TftvPzdTNaye3AyftsHLd9p9mHqCLqNcTrbo8TmAMzYr4HmeebKZUMt5WNbmXjxe2p1L5kvQniVdvjuhewmQuKLN6Rmzd
+Help support more informative and helpful content with XMR/Monero: 44FeV38E1xVV87EaynuNkxcBpmi2G5kSE5n1wPSYjezD87MwsPckBs7SvwJmTRJ15rA3TDYSLPTpY7jyzdVTu9Sv9mtoHpi
 
 <hr> 
 
